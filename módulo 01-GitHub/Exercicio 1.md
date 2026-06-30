@@ -49,8 +49,8 @@ Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**,
 📦 Projeto
 ├── README.md
 ├── imagens/
-│   ├── git1.png
-│   └── github1.png
+│   ├── git.png
+│   └── github.png
 ├── exemplos de código/
 │   └── pyton.py
 └── documentos/
@@ -96,7 +96,7 @@ Já o **GitHub** é uma plataforma online utilizada para hospedar projetos Git, 
 
 ---
 
-# 🔧 Git  ![Logo Git](imagens/git1.png)
+# 🔧 Git  ![Logo Git](imagens/git.png)
 
 Git é um software criado por **Linus Torvalds** para controlar versões de código.
 
@@ -124,7 +124,7 @@ Repository
 
 ---
 
-# 🐙 GitHub ![Logo Git](imagens/github1.png)
+# 🐙 GitHub ![Logo Git](imagens/github.png)
 
 GitHub é uma plataforma baseada em nuvem utilizada para armazenar projetos Git.
 
