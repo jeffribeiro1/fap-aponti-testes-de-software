@@ -29,7 +29,7 @@
 
 # 📌 Objetivo
 
-Este repositório foi desenvolvido para reunir conceitos fundamentais sobre **Git**, **GitHub**, **Branches**, **Merge** e **Pull Request**, além de demonstrar os principais recursos da linguagem **Markdown** utilizados na documentação de projetos.
+Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**, **GitHub**, **Branches**, **Merge** e **Pull Request**, além de demonstrar os principais recursos da linguagem **Markdown** utilizados na documentação de projetos.
 
 ---
 
