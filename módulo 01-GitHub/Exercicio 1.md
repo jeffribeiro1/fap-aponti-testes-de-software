@@ -1,4 +1,3 @@
-
 # 📚 Guia de Git, GitHub e Markdown
 
 ![Git](https://img.shields.io/badge/Git-Version%20Control-F05032?logo=git&logoColor=white)
@@ -11,6 +10,7 @@
 
 - [📌 Objetivo](#-objetivo)
 - [🛠 Tecnologias Utilizadas](#-tecnologias-utilizadas)
+- [📂 Estrutura das Pastas](#-estrutura-das-pastas)
 - [🚀 Como Executar](#-como-executar)
 - [📖 Introdução](#-introdução)
 - [🔧 Git](#-git)
@@ -43,6 +43,20 @@ Este repositório foi desenvolvido para reunir conceitos fundamentais sobre **Gi
 
 ---
 
+# 📂 Estrutura das Pastas
+
+```text
+📦 Projeto
+├── README.md
+├── imagens/
+│   ├── git.png
+│   └── github.png
+├── exemplos/
+│   └── exemplo.py
+└── docs/
+```
+
+---
 
 # 🚀 Como Executar
 
