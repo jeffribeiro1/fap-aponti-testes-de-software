@@ -52,7 +52,7 @@ Este repositório foi desenvolvido para reunir conceitos fundamentais sobre **Gi
 │   ├── git.png
 │   └── github.png
 ├── exemplos/
-│   └── exemplo.py
+│   └── pyton.py
 └── docs/
 ```
 
@@ -96,7 +96,7 @@ Já o **GitHub** é uma plataforma online utilizada para hospedar projetos Git, 
 
 ---
 
-# 🔧 Git
+# 🔧 Git  ![Logo Git](imagens/git.png)
 
 Git é um software criado por **Linus Torvalds** para controlar versões de código.
 
@@ -124,7 +124,7 @@ Repository
 
 ---
 
-# 🐙 GitHub
+# 🐙 GitHub ![Logo Git](imagens/github.png)
 
 GitHub é uma plataforma baseada em nuvem utilizada para armazenar projetos Git.
 
@@ -382,8 +382,12 @@ Voltar ao [Índice](#-índice)
 
 ---
 
+## 9. Documento em PDF
+
+Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Controlando-versões-com-Git-e-Github.pdf).
+
 # 👨‍💻 Autor
 
-**Jefferson Ribeiro**
+**Jefferson Santino**
 
 Desenvolvido como atividade prática para estudos de **Git**, **GitHub** e **Markdown**.
