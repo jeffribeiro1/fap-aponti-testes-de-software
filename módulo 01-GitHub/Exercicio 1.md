@@ -272,7 +272,7 @@ print("Olá, GitHub!")
 for i in range(5):
     print(i)
 ```
-![Exemplo de código pyton](exemplo de codigo/pyton.py)
+![Exemplo de código pyton](exemplo-de-código/pyton.py)
 ---
 
 # ✅ Checklist
