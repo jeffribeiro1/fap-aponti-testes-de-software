@@ -51,9 +51,9 @@ Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**,
 ├── imagens/
 │   ├── git1.png
 │   └── github1.png
-├── exemplos/
+├── exemplos de código/
 │   └── pyton.py
-└── docs/
+└── documentos/
 ```
 
 ---
