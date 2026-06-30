@@ -366,7 +366,7 @@ Clique na imagem abaixo:
 
 ---
 
-## 6. Emoji
+## 6. Emojis
 
 🚀 📚 💻 🔥 ✅ 🎯
 
