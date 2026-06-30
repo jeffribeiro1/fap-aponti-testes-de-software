@@ -271,7 +271,7 @@ print("Olá, GitHub!")
 for i in range(5):
     print(i)
 ```
-
+![Exemplo de código pyton](documentos/pyton.py)
 ---
 
 # ✅ Checklist
