@@ -54,6 +54,7 @@ Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**,
 ├── exemplos de código/
 │   └── pyton.py
 └── documentos/
+    └──Controlando-versões-com-Git-e-Github.pdf
 ```
 
 ---
