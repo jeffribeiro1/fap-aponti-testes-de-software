@@ -385,7 +385,7 @@ Voltar ao [Índice](#-índice)
 
 ## 9. Documento em PDF
 
-Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Controlando-versões-com-Git-e-Github.pdf).
+Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Controlando-Versões-com-Git-e-GitHub.pdf).
 
 # 👨‍💻 Autor
 
