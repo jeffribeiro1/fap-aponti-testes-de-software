@@ -391,4 +391,6 @@ Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Contr
 
 **Jefferson Santino**
 
+![Imagem formato em Gif](imagem-gif.gif)
+
 Desenvolvido como atividade prática para estudos de **Git**, **GitHub** e **Markdown**.
