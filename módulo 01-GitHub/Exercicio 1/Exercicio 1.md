@@ -46,7 +46,7 @@ Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**,
 # 📂 Estrutura das Pastas
 
 ```text
-📦 Projeto
+📦 Exercicio 1
 ├── README.md
 ├── imagens/
 │   ├── git.png
@@ -385,7 +385,7 @@ Voltar ao [Índice](#-índice)
 
 ## 9. Documento em PDF
 
-Baixe o [Material Controlando versões com Git e Github em PDF](documentos/ControlandoVersoescomGiteGitHub.pdf)
+Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Controlando-Versoes-com-Git-e-GitHub.pdf)
 
 # 👨‍💻 Autor
 
