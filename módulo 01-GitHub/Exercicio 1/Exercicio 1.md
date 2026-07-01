@@ -54,7 +54,7 @@ Este markdown foi desenvolvido para reunir conceitos fundamentais sobre **Git**,
 ├── exemplos de código/
 │   └── pyton.py
 └── documentos/
-    └──Controlando-versões-com-Git-e-Github.pdf
+    └──Controlando-versoes-com-Git-e-Github.pdf
 ```
 
 ---
@@ -385,7 +385,7 @@ Voltar ao [Índice](#-índice)
 
 ## 9. Documento em PDF
 
-Baixe o [Material Controlando versões com Git e Github em PDF](documentos/Controlando-versoes-com-Git-e-Github.pdf)
+Baixe o [Material Controlando versões com Git e Github em PDF](Controlando-versoes-com-Git-e-Github.pdf)
 
 # 👨‍💻 Autor
 
