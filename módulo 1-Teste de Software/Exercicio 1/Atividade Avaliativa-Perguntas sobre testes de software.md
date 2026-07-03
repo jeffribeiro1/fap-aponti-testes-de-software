@@ -2,7 +2,7 @@
 
 ### Produzir um texto curto (até 1 página) que responda:
     
-    -   O que é O que é testar software? com suas próprias palavras
+    -   O que é testar software? com suas próprias palavras
     -   Por que testar é importante para o negócio?
     -   O que caracteriza um software com qualidade?
     -   Qual o papel do QA em um time moderno?
