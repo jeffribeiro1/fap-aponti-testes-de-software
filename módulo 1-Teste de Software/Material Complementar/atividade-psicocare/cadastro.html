@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cadastro de profissional no ambiente de testes da clínica de psicologia PsicoCare.">
+    <title>Cadastro | PsicoCare</title>
+    <link rel="icon" href="logo-psicocare.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="register">
+    <main class="page-shell">
+        <section class="auth-card auth-card--wide" aria-labelledby="registerTitle">
+            <header class="brand">
+                <img class="brand__logo" src="logo-psicocare.svg" alt="Logo da clínica PsicoCare">
+                <div>
+                    <p class="brand__eyebrow">Clínica de Psicologia</p>
+                    <h1 class="brand__name">PsicoCare</h1>
+                </div>
+            </header>
+
+            <div class="environment-badge" aria-label="Ambiente atual">Ambiente de testes</div>
+
+            <div class="auth-heading">
+                <h2 id="registerTitle">Cadastro de profissional</h2>
+                <p>Preencha os dados abaixo. Todos os campos são obrigatórios.</p>
+            </div>
+
+            <form id="registerForm" novalidate>
+                <div class="form-grid">
+                    <div class="field-group field-group--full">
+                        <label for="fullName">Nome completo</label>
+                        <input id="fullName" name="fullName" type="text" autocomplete="name" minlength="3" maxlength="100" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" maxlength="100" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="phone">Telefone</label>
+                        <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="20" placeholder="(81) 99999-9999" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="crp">CRP</label>
+                        <input id="crp" name="crp" type="text" maxlength="20" placeholder="Ex.: 02/12345" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="specialty">Especialidade</label>
+                        <input id="specialty" name="specialty" type="text" maxlength="80" placeholder="Ex.: Psicologia clínica" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="username">Usuário</label>
+                        <input id="username" name="username" type="text" autocomplete="username" minlength="3" maxlength="40" pattern="[A-Za-z0-9._-]+" required aria-describedby="usernameHelp">
+                        <small id="usernameHelp">Use letras, números, ponto, hífen ou sublinhado.</small>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="registerPassword">Senha</label>
+                        <div class="password-field">
+                            <input id="registerPassword" name="registerPassword" type="password" autocomplete="new-password" minlength="8" maxlength="64" required aria-describedby="passwordHelp">
+                            <button class="password-toggle" type="button" data-password-toggle="registerPassword" aria-label="Mostrar senha">Mostrar</button>
+                        </div>
+                        <small id="passwordHelp">Mínimo de 8 caracteres.</small>
+                    </div>
+
+                    <div class="field-group field-group--full">
+                        <label for="confirmPassword">Confirmar senha</label>
+                        <div class="password-field">
+                            <input id="confirmPassword" name="confirmPassword" type="password" autocomplete="new-password" minlength="8" maxlength="64" required>
+                            <button class="password-toggle" type="button" data-password-toggle="confirmPassword" aria-label="Mostrar senha">Mostrar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <label class="consent-field">
+                    <input id="testEnvironmentConsent" type="checkbox" required>
+                    <span>Declaro que este cadastro será utilizado somente no ambiente de testes.</span>
+                </label>
+
+                <div id="registerMessage" class="message" role="status" aria-live="polite" hidden></div>
+
+                <button class="primary-button" type="submit">Cadastrar</button>
+            </form>
+
+            <p class="auth-link">Já possui cadastro? <a href="login.html">Voltar para o login</a></p>
+
+            <details class="rules-panel">
+                <summary>Regras aplicadas nesta atividade</summary>
+                <div class="rules-grid">
+                    <section>
+                        <h3>Validações do cadastro</h3>
+                        <ul>
+                            <li>Todos os campos são obrigatórios.</li>
+                            <li>A senha deve possuir no mínimo 8 caracteres.</li>
+                            <li>Usuário e e-mail não podem ser duplicados.</li>
+                            <li>As informações são salvas apenas no armazenamento local do navegador.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Segurança e autenticação</h3>
+                        <ul>
+                            <li>Credenciais incorretas geram uma mensagem genérica.</li>
+                            <li>Após 3 erros consecutivos, o acesso fica bloqueado por 15 minutos.</li>
+                            <li>Tentativas de login são registradas para auditoria.</li>
+                            <li>Áreas restritas exigem uma sessão autenticada.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Premissas da versão</h3>
+                        <ul>
+                            <li>Sem login por redes sociais.</li>
+                            <li>Sem recuperação de senha.</li>
+                            <li>Base pré-cadastrada para testes.</li>
+                            <li>Ambiente de testes separado pela identificação dos dados locais.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Compatibilidade</h3>
+                        <ul>
+                            <li>Layout responsivo para computador e celular.</li>
+                            <li>Uso de recursos suportados pelos principais navegadores modernos.</li>
+                            <li>Processamento local, sem chamadas externas.</li>
+                        </ul>
+                    </section>
+                </div>
+            </details>
+        </section>
+    </main>
+
+    <footer class="page-footer">PsicoCare • Sistema demonstrativo para fins acadêmicos</footer>
+</body>
+</html>

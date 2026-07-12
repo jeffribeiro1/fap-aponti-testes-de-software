@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acesso ao ambiente de testes da clínica de psicologia PsicoCare.">
+    <title>Login | PsicoCare</title>
+    <link rel="icon" href="logo-psicocare.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body data-page="login">
+    <main class="page-shell">
+        <section class="auth-card" id="authCard" aria-labelledby="loginTitle">
+            <header class="brand">
+                <img class="brand__logo" src="logo-psicocare.svg" alt="Logo da clínica PsicoCare">
+                <div>
+                    <p class="brand__eyebrow">Clínica de Psicologia</p>
+                    <h1 class="brand__name">PsicoCare</h1>
+                </div>
+            </header>
+
+            <div class="environment-badge" aria-label="Ambiente atual">Ambiente de testes</div>
+
+            <div class="auth-heading">
+                <h2 id="loginTitle">Acesse sua conta</h2>
+                <p>Entre com o usuário e a senha cadastrados.</p>
+            </div>
+
+            <form id="loginForm" novalidate>
+                <div class="field-group">
+                    <label for="loginUser">Usuário ou e-mail</label>
+                    <input
+                        id="loginUser"
+                        name="loginUser"
+                        type="text"
+                        autocomplete="username"
+                        maxlength="100"
+                        required
+                        aria-describedby="loginUserHelp"
+                    >
+                    <small id="loginUserHelp">Campo obrigatório.</small>
+                </div>
+
+                <div class="field-group">
+                    <label for="loginPassword">Senha</label>
+                    <div class="password-field">
+                        <input
+                            id="loginPassword"
+                            name="loginPassword"
+                            type="password"
+                            autocomplete="current-password"
+                            minlength="8"
+                            maxlength="64"
+                            required
+                            aria-describedby="loginPasswordHelp"
+                        >
+                        <button class="password-toggle" type="button" data-password-toggle="loginPassword" aria-label="Mostrar senha">Mostrar</button>
+                    </div>
+                    <small id="loginPasswordHelp">A senha deve possuir pelo menos 8 caracteres.</small>
+                </div>
+
+                <div id="loginMessage" class="message" role="status" aria-live="polite" hidden></div>
+
+                <button class="primary-button" id="loginButton" type="submit">Entrar</button>
+            </form>
+
+            <p class="auth-link">Novo por aqui? <a href="cadastro.html">Cadastre-se</a></p>
+
+            <aside class="test-credentials" aria-labelledby="testCredentialsTitle">
+                <h3 id="testCredentialsTitle">Usuários pré-cadastrados</h3>
+                <p><strong>Administrador:</strong> admin@psicocare.com / admin123</p>
+                <p><strong>Recepção:</strong> recepcao@psicocare.com / recep123</p>
+                <p><strong>Paciente:</strong> paciente@psicocare.com / paciente123</p>
+            </aside>
+
+            <details class="rules-panel">
+                <summary>Regras aplicadas nesta atividade</summary>
+                <div class="rules-grid">
+                    <section>
+                        <h3>Funcionalidades principais</h3>
+                        <ul>
+                            <li>Autenticação por usuário e senha.</li>
+                            <li>Validação das credenciais cadastradas.</li>
+                            <li>Mensagem genérica para dados inválidos, sem expor informações sensíveis.</li>
+                            <li>Bloqueio temporário após 3 tentativas consecutivas incorretas.</li>
+                            <li>Logout disponível na área autenticada.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Requisitos não funcionais</h3>
+                        <ul>
+                            <li>Processamento local da autenticação, projetado para responder em menos de 2 segundos.</li>
+                            <li>Compatibilidade com navegadores modernos.</li>
+                            <li>Registro das tentativas de login no armazenamento local para auditoria.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Regras de negócio</h3>
+                        <ul>
+                            <li>Usuário e senha são obrigatórios.</li>
+                            <li>A senha deve possuir no mínimo 8 caracteres.</li>
+                            <li>Após o bloqueio, uma nova tentativa só é permitida depois de 15 minutos.</li>
+                            <li>Áreas restritas só aparecem para usuários autenticados.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Premissas e restrições</h3>
+                        <ul>
+                            <li>Não há integração com redes sociais.</li>
+                            <li>Não há recuperação de senha nesta versão.</li>
+                            <li>Existem usuários pré-cadastrados para testes.</li>
+                            <li>Os dados usam uma identificação exclusiva do ambiente de testes.</li>
+                        </ul>
+                    </section>
+                </div>
+            </details>
+        </section>
+
+        <section class="dashboard" id="dashboard" aria-labelledby="dashboardTitle" hidden>
+            <header class="dashboard__header">
+                <div class="brand brand--compact">
+                    <img class="brand__logo" src="logo-psicocare.svg" alt="Logo da clínica PsicoCare">
+                    <div>
+                        <p class="brand__eyebrow">Área restrita</p>
+                        <h1 class="brand__name">PsicoCare</h1>
+                    </div>
+                </div>
+                <button class="secondary-button" id="logoutButton" type="button">Sair</button>
+            </header>
+
+            <div class="welcome-card">
+                <p class="welcome-card__label">Sessão autenticada</p>
+                <h2 id="dashboardTitle">Bem-vindo(a), <span id="sessionUserName">usuário</span>!</h2>
+                <p>Perfil: <strong id="sessionUserRole">Não informado</strong></p>
+                <p>O acesso a esta área é exibido somente após a validação das credenciais.</p>
+            </div>
+
+            <section class="audit-card" id="auditCard" hidden aria-labelledby="auditTitle">
+                <div class="section-heading">
+                    <div>
+                        <p class="welcome-card__label">Auditoria</p>
+                        <h2 id="auditTitle">Últimas tentativas de login</h2>
+                    </div>
+                    <button class="text-button" id="clearLogsButton" type="button">Limpar logs</button>
+                </div>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Data e hora</th>
+                                <th>Identificador</th>
+                                <th>Resultado</th>
+                                <th>Tempo</th>
+                            </tr>
+                        </thead>
+                        <tbody id="auditTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <footer class="page-footer">PsicoCare • Sistema demonstrativo para fins acadêmicos</footer>
+</body>
+</html>

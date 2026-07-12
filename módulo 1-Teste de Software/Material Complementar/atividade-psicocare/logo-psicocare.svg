@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title desc">
+  <title id="title">Logo da clínica PsicoCare</title>
+  <desc id="desc">Símbolo formado por balões de diálogo e um coração.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="16" x2="142" y2="146" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4f8f7b"/>
+      <stop offset="1" stop-color="#23594d"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="144" height="144" rx="38" fill="url(#bg)"/>
+  <path d="M39 45h60a24 24 0 0 1 24 24v16a24 24 0 0 1-24 24H72l-22 18 5-18H39a24 24 0 0 1-24-24V69a24 24 0 0 1 24-24Z" fill="#fff" opacity=".96"/>
+  <path d="M74 81c-10-15-31-5-26 11 3 10 16 19 26 26 10-7 23-16 26-26 5-16-16-26-26-11Z" fill="#d96b78"/>
+  <circle cx="111" cy="52" r="17" fill="#d9efe7"/>
+  <path d="M111 42v20M101 52h20" stroke="#23594d" stroke-width="6" stroke-linecap="round"/>
+</svg>
