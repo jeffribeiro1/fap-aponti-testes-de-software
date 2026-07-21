@@ -1,6 +1,6 @@
 # Atividade Avaliativa — Níveis de Testes Funcionais:
 
-# Dado um sistema fictício, os alunos deverão analisar suas funcionalidades e indicar:
+# Dado um sistema fictício, analisar suas funcionalidades e indicar:
 
 * Quais testes seriam unitários?
 * Quais testes seriam de integração?
