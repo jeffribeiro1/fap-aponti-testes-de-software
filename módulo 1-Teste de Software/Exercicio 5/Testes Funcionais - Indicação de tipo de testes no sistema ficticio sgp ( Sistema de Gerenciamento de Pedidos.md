@@ -1,35 +1,14 @@
-# Atividade Avaliativa — Níveis de Teste
+# Atividade Avaliativa — Níveis de Testes Funcionais:
 
-## Sistema analisado
+# Dado um sistema fictício, os alunos deverão analisar suas funcionalidades e indicar:
 
-**Sistema de Gerenciamento de Pedidos — SGP**
+* Quais testes seriam unitários?
+* Quais testes seriam de integração?
+* Quais testes seriam de sistema?
+* Quais testes seriam de aceitação?
+* Justificar escolhas com base no objetivo e no nível do teste
 
-O SGP é uma aplicação web utilizada por **clientes e administradores** para realizar e gerenciar pedidos de produtos online.
 
-## Funcionalidades principais
-
-- Cadastro e autenticação de usuários;
-- Consulta de produtos disponíveis;
-- Adição de produtos ao carrinho;
-- Remoção de produtos do carrinho;
-- Cálculo automático do valor total;
-- Finalização do pedido;
-- Confirmação do pedido.
-
-## Integrações
-
-- Integração com banco de dados de produtos;
-- Integração com serviço de autenticação;
-- Integração com serviço de pedidos.
-
-## Regras de negócio
-
-- O pedido deve possuir pelo menos um item;
-- O valor total deve considerar o preço e a quantidade dos produtos;
-- Usuários não autenticados não podem finalizar pedidos;
-- Após a confirmação, o pedido não pode mais ser alterado.
-
----
 
 # 1. Testes Unitários
 
