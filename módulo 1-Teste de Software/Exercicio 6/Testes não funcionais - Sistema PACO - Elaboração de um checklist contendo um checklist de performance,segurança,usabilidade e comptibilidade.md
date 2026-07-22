@@ -106,7 +106,6 @@ Os testes de **compatibilidade** verificam se a plataforma funciona corretamente
 
 # 📄Conclusão
 
-![GIF QUALIDADE](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdnhlMGFodm9sNTYzNml3ZmJ5YXR3enQ4YzNpaG5nMDlyaWM5M3NmNSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/VhWVAa7rUtT3xKX6Cd/giphy.gif)
 
 Os **testes não funcionais** são importantes porque não verificam apenas **se uma funcionalidade funciona**, mas também **como o sistema funciona**.
 
