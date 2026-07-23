@@ -127,8 +127,6 @@ Falha na comunicação entre o agendamento e a agenda do psicólogo, permitindo 
 
 Realizar testes de sistema por meio da interface da aplicação **Clínica Psi**, simulando fluxos executados pelo usuário final.
 
-**Sistema utilizado:**
-https://andrelbribeiro.github.io/clinica-psi/
 
 ---
 
