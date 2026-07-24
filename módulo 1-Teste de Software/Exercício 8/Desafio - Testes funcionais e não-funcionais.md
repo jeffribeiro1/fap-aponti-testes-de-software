@@ -353,7 +353,7 @@ Os resultados obtidos demonstram que as funcionalidades testadas estão operando
 
 ---
 
-# 🧪 Exercício 5 — Testes de Aceitação
+#  Exercício 5 — Testes de Aceitação
 
 ## 🎯 Objetivo
 
@@ -522,7 +522,7 @@ Portanto, o teste de aceitação ajuda a verificar se o sistema realmente atende
 
 # Exercício 6 - Classificação dos Testes
 
-# 🧪 Relatório de Execução dos Casos de Teste
+#  Relatório de Execução dos Casos de Teste
 
 ## Caso 1 — Registro e Validação de Dados
 
