@@ -520,7 +520,7 @@ Portanto, o teste de aceitação ajuda a verificar se o sistema realmente atende
 
 ----
 
-Exercício 6 - Classificação dos Testes
+# Exercício 6 - Classificação dos Testes
 
 # 🧪 Relatório de Execução dos Casos de Teste
 
