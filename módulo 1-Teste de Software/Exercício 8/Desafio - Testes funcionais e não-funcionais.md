@@ -121,7 +121,7 @@ Falha na comunicação entre o agendamento e a agenda do psicólogo, permitindo 
 
 ---
 
-# Exercício 4 — Testes de Sistema
+# Exercício 4 - Testes de Sistema
 
 ## Objetivo
 
@@ -353,7 +353,7 @@ Os resultados obtidos demonstram que as funcionalidades testadas estão operando
 
 ---
 
-#  Exercício 5 — Testes de Aceitação
+#  Exercício 5 - Testes de Aceitação
 
 ## 🎯 Objetivo
 
