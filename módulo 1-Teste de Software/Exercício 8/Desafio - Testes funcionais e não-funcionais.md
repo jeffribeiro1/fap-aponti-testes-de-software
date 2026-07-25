@@ -1,3 +1,83 @@
+# 📑 Índice
+
+## 🧪 Parte 1 — Testes Funcionais
+
+1. [Exercício 1 — 5 Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema)
+2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários)
+3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração)
+   - [1 — Cadastro de paciente integrado ao banco de dados](#1---cadastro-de-paciente-integrado-ao-banco-de-dados)
+   - [2 — Compra de produto integrada ao estoque](#2---compra-de-produto-integrada-ao-estoque)
+   - [3 — Receita e despesa integradas ao relatório financeiro](#3---receita-e-despesa-integradas-ao-relatório-financeiro)
+   - [4 — Reagendamento integrado à liberação do horário anterior](#4---reagendamento-integrado-à-liberação-do-horário-anterior)
+   - [5 — Agendamento integrado à agenda do psicólogo](#5---agendamento-integrado-à-agenda-do-psicólogo)
+   - [Tabela Resumida dos Testes de Integração](#tabela-resumida-dos-testes-de-integração)
+
+4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema)
+   - [Cenário A — Atendimento Completo](#cenário-a--atendimento-completo)
+   - [Cenário B — Reagendamento](#cenário-b--reagendamento)
+   - [Cenário C — Controle de Estoque](#cenário-c--controle-de-estoque)
+   - [Cenário D — Controle de Acesso](#cenário-d--controle-de-acesso)
+   - [Resumo dos Testes de Sistema](#resumo-dos-testes-de-sistema)
+   - [Conclusão dos Testes de Sistema](#conclusão)
+
+5. [Exercício 5 — Testes de Aceitação](#exercício-5---testes-de-aceitação)
+   - [Objetivo](#-objetivo)
+   - [Critério 1 — Cadastro de Paciente](#-critério-de-aceitação-1--cadastro-de-paciente)
+   - [Critério 2 — Pesquisa de Paciente](#-critério-de-aceitação-2--pesquisa-de-paciente)
+   - [Critério 3 — Realizar Agendamento](#-critério-de-aceitação-3--realizar-agendamento)
+   - [Critério 4 — Impedir Conflito de Horário](#-critério-de-aceitação-4--impedir-conflito-de-horário)
+   - [Critério 5 — Atualização do Relatório Financeiro](#-critério-de-aceitação-5--atualização-do-relatório-financeiro)
+   - [Critério 6 — Registro de Prontuário](#-critério-de-aceitação-6--registro-de-prontuário)
+   - [Critério 7 — Alerta de Estoque Baixo](#-critério-de-aceitação-7--alerta-de-estoque-baixo)
+   - [Critério 8 — Preservação dos Dados](#-critério-de-aceitação-8--preservação-dos-dados)
+   - [Resumo dos Critérios de Aceitação](#-resumo-dos-critérios-de-aceitação)
+   - [Justificativa Geral](#-justificativa-geral)
+
+6. [Exercício 6 — Classificação dos Testes](#exercício-6---classificação-dos-testes)
+   - [Relatório de Execução dos Casos de Teste](#relatório-de-execução-dos-casos-de-teste)
+   - [Caso 1 — Registro e Validação de Dados](#caso-1--registro-e-validação-de-dados)
+   - [Caso 2 — Relatório Financeiro e Gráficos](#caso-2--relatório-financeiro-e-gráficos)
+   - [Caso 3 — Cadastro de Pacientes, Atendimento e Pagamento](#caso-3--cadastro-de-pacientes-atendimento-e-pagamento)
+   - [Caso 4 — Funcionalidade Ausente](#caso-4--funcionalidade-ausente)
+   - [Caso 5 — Validação de Inputs de Contato e Documentos](#caso-5--validação-de-inputs-de-contato-e-documentos)
+   - [Caso 6 — Reagendamento de Consultas](#caso-6--reagendamento-de-consultas)
+   - [Caso 7 — Gestão e Alteração de Tipos de Conta](#caso-7--gestão-e-alteração-de-tipos-de-conta)
+   - [Caso 8 — Confirmação de Agendamento por Recepcionista](#caso-8--confirmação-de-agendamento-por-recepcionista)
+   - [Resumo dos Resultados](#-resumo-dos-resultados)
+   - [Conclusão Geral](#-conclusão-geral)
+
+---
+
+## 🔎 Parte 2 — Checklist de Testes Não Funcionais
+
+1. [Sistema Avaliado](#sistema-avaliado)
+2. [⚡ Checklist — Performance](#1--checklist--performance)
+3. [🔒 Checklist — Segurança](#2--checklist--segurança)
+4. [👤 Checklist — Usabilidade](#3--checklist--usabilidade)
+5. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade)
+
+### 🐞 Relatório de Defeitos Encontrados
+
+- [DF-01 — Campo Data aceita valores inválidos](#df-01--campo-data-aceita-valores-inválidos)
+- [DF-02 — CPF não possui validação adequada](#df-02--cpf-não-possui-validação-adequada)
+- [DF-03 — Telefone aceita caracteres inválidos](#df-03--telefone-aceita-caracteres-inválidos)
+- [DF-04 — E-mail aceita formato inválido](#df-04--e-mail-aceita-formato-inválido)
+- [DF-05 — Sistema não possui autenticação de usuário](#df-05--sistema-não-possui-autenticação-de-usuário)
+- [DF-06 — Prontuários sem controle de acesso](#df-06--prontuários-sem-controle-de-acesso)
+- [DF-07 — Gráfico financeiro sem interatividade](#df-07--gráfico-financeiro-sem-interatividade)
+- [DF-08 — Gráfico não aparece corretamente na impressão](#df-08--gráfico-não-aparece-corretamente-na-impressão)
+- [DF-09 — Atendimento e pagamento não estão integrados](#df-09--atendimento-e-pagamento-não-estão-integrados)
+- [DF-10 — Confirmação de agendamento pela recepcionista não implementada](#df-10--confirmação-de-agendamento-pela-recepcionista-não-implementada)
+  
+### 📊 Resumos
+
+- [Resumo dos Defeitos](#-resumo-dos-defeitos)
+- [Resumo do Checklist](#-resumo-do-checklist)
+- [Conclusão](#-conclusão)
+
+---
+
+
 # Parte 1 — Testes funcionais
 
 # Exercício 1 - 5 Funcionalidades do Sistema
