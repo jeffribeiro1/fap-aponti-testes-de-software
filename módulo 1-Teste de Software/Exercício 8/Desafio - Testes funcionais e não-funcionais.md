@@ -718,5 +718,394 @@ Os principais pontos de atenção encontrados foram:
 
 Esses problemas devem ser registrados como **bugs, limitações ou melhorias**, para que possam ser avaliados e corrigidos em versões futuras do sistema.
 
+---
+
+# 🧪 Parte 2 — Checklist de Testes Não Funcionais
+
+## Sistema avaliado
+
+**Sistema:** Clínica Psi
+**Tipo:** Sistema de gestão para clínica de psicologia
+**Tecnologias:** HTML, CSS e JavaScript
+**Armazenamento:** LocalStorage do navegador
+
+---
+
+# 1. ⚡ Checklist — Performance
+
+| Categoria   | O que verificar                      | Como verificar                                                                 | Critério esperado                                                                   | Risco associado                                               | Prioridade |
+| ----------- | ------------------------------------ | ------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------- | ---------- |
+| Performance | Tempo de carregamento inicial        | Abrir o sistema e verificar o tempo de carregamento pelo DevTools do navegador | A página principal deve carregar em até 3 segundos em uma conexão estável           | Lentidão pode prejudicar o atendimento na recepção            | 🔴 Alta    |
+| Performance | Velocidade da pesquisa de pacientes  | Cadastrar vários pacientes e realizar pesquisas pelo campo de busca            | O resultado deve ser apresentado em até 1 segundo                                   | Lentidão para localizar pacientes durante o atendimento       | 🔴 Alta    |
+| Performance | Cadastro de novos registros          | Preencher e salvar pacientes, psicólogos ou agendamentos                       | O registro deve ser salvo e exibido sem travamentos perceptíveis                    | Atraso no atendimento e possibilidade de cadastros duplicados | 🔴 Alta    |
+| Performance | Desempenho com muitos registros      | Criar grande quantidade de pacientes e agendamentos e navegar pelas telas      | O sistema deve continuar responsivo e sem travamentos                               | Queda de desempenho com o crescimento da base de dados        | 🟡 Média   |
+| Performance | Carregamento do relatório financeiro | Cadastrar várias receitas e despesas e abrir o relatório financeiro            | Totais e gráfico devem ser apresentados rapidamente e sem congelamento da interface | Dificuldade para consultar dados financeiros                  | 🟡 Média   |
+
+---
+
+# 2. 🔒 Checklist — Segurança
+
+| Categoria | O que verificar                             | Como verificar                                                                    | Critério esperado                                                           | Risco associado                                            | Prioridade |
+| --------- | ------------------------------------------- | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------- | ---------------------------------------------------------- | ---------- |
+| Segurança | Acesso ao sistema sem autenticação          | Abrir diretamente a URL da aplicação                                              | O sistema deveria solicitar autenticação antes de permitir acesso aos dados | Pessoas não autorizadas podem acessar dados da clínica     | 🔴 Alta    |
+| Segurança | Restrição de acesso aos prontuários         | Tentar acessar o módulo de prontuários sem possuir perfil de psicólogo autorizado | Apenas usuários autorizados deveriam acessar informações clínicas           | Exposição de informações confidenciais dos pacientes       | 🔴 Alta    |
+| Segurança | Validação de CPF, telefone e e-mail         | Digitar letras, símbolos e formatos inválidos nesses campos                       | O sistema deve impedir dados inválidos e informar o erro                    | Dados inconsistentes podem ser armazenados                 | 🔴 Alta    |
+| Segurança | Proteção contra código malicioso nos campos | Inserir texto contendo tags HTML ou scripts em campos de cadastro                 | O conteúdo deve ser tratado como texto e não executado pelo navegador       | Possibilidade de ataque XSS e execução de código malicioso | 🔴 Alta    |
+| Segurança | Proteção dos dados armazenados              | Verificar o LocalStorage pelo DevTools do navegador                               | Informações sensíveis não deveriam permanecer expostas em texto simples     | Acesso indevido a dados pessoais e clínicos                | 🔴 Alta    |
+
+---
+
+# 3. 👤 Checklist — Usabilidade
+
+| Categoria   | O que verificar                    | Como verificar                                                  | Critério esperado                                                                         | Risco associado                                                         | Prioridade |
+| ----------- | ---------------------------------- | --------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------- |
+| Usabilidade | Facilidade de navegação pelo menu  | Acessar pacientes, psicólogos, agenda, prontuários e financeiro | O usuário deve identificar facilmente onde encontrar cada funcionalidade                  | Usuário pode se perder durante o uso do sistema                         | 🟡 Média   |
+| Usabilidade | Mensagem para campos obrigatórios  | Tentar salvar um formulário deixando campos obrigatórios vazios | O sistema deve impedir o cadastro e indicar os campos necessários                         | Usuário pode não entender por que o registro não foi salvo              | 🔴 Alta    |
+| Usabilidade | Preenchimento do campo Data        | Digitar letras, data incompleta ou formato incorreto            | O sistema deve aceitar somente uma data válida e apresentar formato adequado              | Cadastro de datas incorretas em consultas e registros                   | 🔴 Alta    |
+| Usabilidade | Utilização em dispositivos móveis  | Abrir o sistema em resolução de smartphone e tablet             | Menu, tabelas, formulários e botões devem permanecer legíveis e utilizáveis               | Usuários de dispositivos móveis podem não conseguir operar o sistema    | 🟡 Média   |
+| Usabilidade | Visualização do gráfico financeiro | Passar o mouse e clicar nas informações do gráfico              | O gráfico deveria apresentar valores ou detalhes de cada período de maneira compreensível | Usuário pode ter dificuldade para interpretar os resultados financeiros | 🟡 Média   |
+
+---
+
+# 4. 💻 Checklist — Compatibilidade
+
+| Categoria       | O que verificar                   | Como verificar                                                                | Critério esperado                                                                   | Risco associado                                                 | Prioridade |
+| --------------- | --------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------- | ---------- |
+| Compatibilidade | Funcionamento no Google Chrome    | Executar cadastro, pesquisa, agendamento e relatório utilizando Chrome        | Todas as funcionalidades devem funcionar corretamente                               | Parte dos usuários pode não conseguir utilizar o sistema        | 🔴 Alta    |
+| Compatibilidade | Funcionamento no Microsoft Edge   | Repetir os principais fluxos utilizando Edge                                  | O comportamento deve ser equivalente ao Chrome                                      | Diferenças entre navegadores podem causar erros                 | 🟡 Média   |
+| Compatibilidade | Funcionamento no Mozilla Firefox  | Repetir cadastro, edição, pesquisa e relatório no Firefox                     | As funções e o layout devem funcionar corretamente                                  | Recursos JavaScript ou CSS podem apresentar diferenças          | 🟡 Média   |
+| Compatibilidade | Funcionamento em smartphones      | Testar a aplicação utilizando navegador mobile ou modo responsivo do DevTools | O conteúdo deve se adaptar sem sobreposição ou perda de funcionalidades             | Usuários mobile podem não conseguir utilizar determinadas telas | 🔴 Alta    |
+| Compatibilidade | Impressão do relatório financeiro | Utilizar a opção de imprimir relatório em diferentes navegadores              | Valores, títulos e gráfico devem aparecer corretamente na visualização de impressão | Relatórios podem ser impressos incompletos                      | 🔴 Alta    |
+
+---
+
+# 🐞 Relatório de Defeitos Encontrados
+
+## DF-01 — Campo Data aceita valores inválidos
+
+**Categoria:** Usabilidade / Validação
+**Severidade:** Alta
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Reprovado
+
+### Descrição
+
+O campo destinado ao preenchimento de datas permite a inserção de informações fora de um formato válido.
+
+### Passos para reproduzir
+
+1. Acessar uma funcionalidade que possua campo Data.
+2. Preencher os demais campos obrigatórios.
+3. No campo Data, inserir letras ou apenas um número.
+4. Salvar o registro.
+
+### Resultado obtido
+
+O sistema permite que o registro seja realizado com a informação inválida.
+
+### Resultado esperado
+
+O campo deve aceitar somente datas válidas.
+
+### Risco
+
+Podem ser cadastradas consultas, receitas, despesas ou outros registros com datas incorretas.
+
+### Evidência
+
+![Validação de data](./evidencias/EVD-01-data-invalida.png)
+
+---
+
+## DF-02 — CPF não possui validação adequada
+
+**Categoria:** Segurança / Usabilidade
+**Severidade:** Alta
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Reprovado
+
+### Descrição
+
+O campo CPF permite a inserção de letras, caracteres e valores fora do padrão esperado.
+
+### Resultado esperado
+
+O sistema deve permitir somente CPF em formato válido.
+
+### Risco
+
+Cadastro de pacientes com informações incorretas ou inconsistentes.
+
+### Evidência
+
+![Cpf invalido](./evidencias/EVD-02-cpf-invalido.png)
+
+---
+
+## DF-03 — Telefone aceita caracteres inválidos
+
+**Categoria:** Segurança / Usabilidade
+**Severidade:** Média
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Reprovado
+
+### Descrição
+
+O campo telefone não apresenta máscara ou validação suficiente.
+
+### Resultado esperado
+
+O campo deve aceitar somente números válidos e apresentar uma máscara adequada.
+
+Exemplo:
+
+```text
+(81) 99999-9999
+```
+
+### Risco
+
+A clínica pode armazenar contatos inválidos e não conseguir entrar em contato com o paciente.
+
+### Evidência
+
+![Telefone invalido](./evidencias/EVD-03-telefone-invalido.png)
+
+---
+
+## DF-04 — E-mail aceita formato inválido
+
+**Categoria:** Segurança / Usabilidade
+**Severidade:** Média
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Reprovado
+
+### Descrição
+
+O sistema permite o cadastro de informações que não correspondem ao formato de um e-mail válido.
+
+### Exemplo
+
+```text
+jefferson@
+```
+
+ou
+
+```text
+emailinvalido
+```
+
+### Resultado esperado
+
+O sistema deve rejeitar e-mails inválidos.
+
+### Risco
+
+A clínica pode armazenar dados de contato incorretos.
+
+### Evidência
+
+![Email invalido](./evidencias/EVD-04-email-invalido.png)
+
+---
+
+## DF-05 — Sistema não possui autenticação de usuário
+
+**Categoria:** Segurança
+**Severidade:** Crítica
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Não implementado
+
+### Descrição
+
+O sistema pode ser acessado diretamente sem que o usuário informe login e senha.
+
+### Resultado esperado
+
+O usuário deveria autenticar-se antes de acessar informações da clínica.
+
+### Risco
+
+Pessoas não autorizadas podem visualizar ou modificar dados da aplicação.
+
+### Evidência
+
+![Acesso sem login](evidencias/EVD-05-acesso-sem-login.gif)
+
+---
+
+## DF-06 — Prontuários sem controle de acesso
+
+**Categoria:** Segurança
+**Severidade:** Crítica
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Não implementado
+
+### Descrição
+
+Não existe gerenciamento de usuários ou permissões capaz de limitar o acesso aos prontuários.
+
+### Resultado esperado
+
+Somente profissionais autorizados deveriam consultar informações clínicas dos pacientes.
+
+### Risco
+
+Exposição de informações confidenciais.
+
+### Evidência
+
+![Prontuario sem restricao](evidencias/EVD-06-prontuario-sem-restricao.png)
+
+---
+
+## DF-07 — Gráfico financeiro sem interatividade
+
+**Categoria:** Usabilidade
+**Severidade:** Baixa
+**Prioridade:** 🟡 Média
+**Status:** ⚠️ Limitação
+
+### Descrição
+
+O gráfico financeiro é estático e não apresenta valores ao passar o mouse ou clicar nas barras.
+
+### Resultado esperado
+
+O usuário deveria conseguir visualizar informações relacionadas ao período representado no gráfico.
+
+### Risco
+
+Dificuldade para interpretar rapidamente as informações financeiras.
+
+### Evidência
+
+![Grafico sem interacao](evidencias/EVD-07-grafico-sem-interacao.gif) 
+
+---
+
+## DF-08 — Gráfico não aparece corretamente na impressão
+
+**Categoria:** Compatibilidade / Usabilidade
+**Severidade:** Média
+**Prioridade:** 🔴 Alta
+**Status:** ❌ Reprovado
+
+### Descrição
+
+Ao utilizar a opção de impressão do relatório financeiro, o gráfico não é apresentado corretamente.
+
+### Resultado esperado
+
+A versão impressa deveria apresentar:
+
+* receitas;
+* despesas;
+* saldo;
+* gráfico financeiro.
+
+### Risco
+
+Geração de relatórios incompletos para a administração da clínica.
+
+### Evidência
+
+![Impressao sem grafico](evidencias/EVD-08-impressao-sem-grafico.gif)
+
+---
+
+## DF-09 — Atendimento e pagamento não estão integrados
+
+**Categoria:** Usabilidade / Funcionalidade
+**Severidade:** Alta
+**Prioridade:** 🔴 Alta
+**Status:** ⚠️ Funcionalidade incompleta
+
+### Descrição
+
+O cadastro do paciente pode ser realizado, porém não existe um fluxo completo integrado envolvendo atendimento e pagamento.
+
+### Resultado esperado
+
+O sistema deveria permitir que o fluxo do paciente pudesse continuar do atendimento até o registro financeiro correspondente.
+
+### Risco
+
+Necessidade de controles paralelos ou manuais pela clínica.
+
+### Evidência
+
+![Atendimento e pagamento nao integrados](evidencias/EVD-09-atendimento-epagamento-nao-estao-integrados.gif)
+
+---
+
+## DF-10 — Confirmação de agendamento pela recepcionista não implementada
+
+**Categoria:** Usabilidade / Funcionalidade
+**Severidade:** Média
+**Prioridade:** 🟡 Média
+**Status:** ❌ Não implementado
+
+### Descrição
+
+Não existe um fluxo específico para a recepcionista confirmar um agendamento.
+
+### Resultado esperado
+
+A recepcionista deveria conseguir confirmar ou alterar o status da consulta de maneira clara.
+
+### Risco
+
+Dificuldade no controle das consultas confirmadas, pendentes ou canceladas.
+
+### Evidência
+
+![Sem fluxo para recepcao confirmar agendamento](evidencias/EVD-10-nao-existe-um-fluxo-especifico-para-a-recepcionista-confirmar-um-agendamento.png)
+
+---
+
+# 📊 Resumo dos Defeitos
+
+| ID    | Defeito                                | Categoria               | Severidade | Prioridade |
+| ----- | -------------------------------------- | ----------------------- | ---------- | ---------- |
+| DF-01 | Data aceita valores inválidos          | Usabilidade             | Alta       | 🔴 Alta    |
+| DF-02 | CPF sem validação                      | Segurança / Usabilidade | Alta       | 🔴 Alta    |
+| DF-03 | Telefone sem validação                 | Segurança / Usabilidade | Média      | 🔴 Alta    |
+| DF-04 | E-mail sem validação                   | Segurança / Usabilidade | Média      | 🔴 Alta    |
+| DF-05 | Ausência de autenticação               | Segurança               | Crítica    | 🔴 Alta    |
+| DF-06 | Prontuários sem controle de acesso     | Segurança               | Crítica    | 🔴 Alta    |
+| DF-07 | Gráfico financeiro sem interatividade  | Usabilidade             | Baixa      | 🟡 Média   |
+| DF-08 | Gráfico ausente na impressão           | Compatibilidade         | Média      | 🔴 Alta    |
+| DF-09 | Atendimento e pagamento não integrados | Usabilidade             | Alta       | 🔴 Alta    |
+| DF-10 | Confirmação por recepcionista ausente  | Usabilidade             | Média      | 🟡 Média   |
+
+---
+
+# 📈 Resumo do Checklist
+
+| Categoria          |         Quantidade de testes |
+| ------------------ | ---------------------------: |
+| ⚡ Performance      |                            5 |
+| 🔒 Segurança       |                            5 |
+| 👤 Usabilidade     |                            5 |
+| 💻 Compatibilidade |                            5 |
+| **Total**          | **20 testes não funcionais** |
+
+---
+
+# 📝 Conclusão
+
+Os testes não funcionais têm como objetivo verificar características do sistema que vão além do simples funcionamento das funcionalidades.
+
+No sistema **Clínica Psi**, foram avaliados aspectos relacionados à **performance, segurança, usabilidade e compatibilidade**.
+
+Os testes demonstram que o sistema possui funcionalidades importantes para o gerenciamento da clínica, porém existem pontos que precisam de melhorias, principalmente relacionados à segurança e à validação das informações inseridas pelos usuários.
+
+Entre os principais riscos identificados estão a ausência de autenticação e controle de acesso, falta de validação adequada de CPF, telefone, e-mail e data, além de limitações relacionadas à impressão e apresentação dos dados financeiros.
+
+As evidências dos testes devem ser registradas por meio de capturas de tela, permitindo demonstrar tanto os comportamentos corretos quanto os defeitos encontrados durante a execução.
+
+A utilização do checklist permite organizar os testes e indicar claramente **o que foi testado, como o teste foi realizado, qual era o comportamento esperado, o risco envolvido e a prioridade de cada verificação**.
 
 
