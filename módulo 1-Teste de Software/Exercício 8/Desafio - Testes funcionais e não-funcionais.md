@@ -2,7 +2,7 @@
 
 ## 🧪 Parte 1 — Testes Funcionais
 
-1. [Exercício 1 — 5 Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema)
+1. [Exercício 1 — Cinco Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema)
 2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários)
 3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração)
 4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema)
@@ -43,7 +43,7 @@
 
 # Parte 1 — Testes funcionais
 
-# Exercício 1 - 5 Funcionalidades do Sistema
+# Exercício 1 - Cinco Funcionalidades do Sistema
 
 | Nº | Funcionalidade            | Usuário                       | Entrada Principal                            | Resultado Esperado                                        | Possíveis Erros                                                                              |
 | -- | ------------------------- | ----------------------------- | -------------------------------------------- | --------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
