@@ -5,21 +5,21 @@
 
 ## 🧪 Parte 1 — Testes Funcionais
 
-1. [Exercício 1 — Cinco Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema)
-2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários)
-3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração)
-4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema)
-5. [Exercício 5 — Testes de Aceitação](#exercício-5---testes-de-aceitação)
-6. [Exercício 6 — Classificação dos Testes](#exercício-6---classificação-dos-testes)
+1. [Exercício 1 — Cinco Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema) Aluno: Jefferson Santino Ribeiro
+2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários) Aluno: Jefferson Santino Ribeiro
+3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração) Aluno: Paulo Henrique de Barros Brandão
+4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema) Aluno: Claudio Albuquerque Souza Junior
+5. [Exercício 5 — Testes de Aceitação](#exercício-5---testes-de-aceitação) Aluno: Rodrigo Gomes Santiago
+6. [Exercício 6 — Classificação dos Testes](#exercício-6---classificação-dos-testes) Aluno: João Alberto
 
 ---
 
 ## 🔎 Parte 2 — Checklist de Testes Não Funcionais
 
-1. [⚡ Checklist — Performance](#1--checklist--performance)
-2. [🔒 Checklist — Segurança](#2--checklist--segurança)
-3. [👤 Checklist — Usabilidade](#3--checklist--usabilidade)
-4. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade)
+1. [⚡ Checklist — Performance](#1--checklist--performance) Aluno: Alyson Veríssimo dos Prazeres
+2. [🔒 Checklist — Segurança](#2--checklist--segurança) Aluno: Alyson Veríssimo dos Prazeres
+3. [👤 Checklist — Usabilidade](#3--checklist--usabilidade) Aluno: José Mário Farias Da Silva Junior
+4. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade) Aluno: José Mário Farias Da Silva Junior
 
 ### 🐞 Relatório de Defeitos Encontrados
 
