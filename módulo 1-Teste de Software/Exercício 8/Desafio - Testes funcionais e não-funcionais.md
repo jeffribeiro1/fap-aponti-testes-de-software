@@ -13,11 +13,10 @@
 
 ## 🔎 Parte 2 — Checklist de Testes Não Funcionais
 
-1. [Sistema Avaliado](#sistema-avaliado)
-2. [⚡ Checklist — Performance](#1--checklist--performance)
-3. [🔒 Checklist — Segurança](#2--checklist--segurança)
-4. [👤 Checklist — Usabilidade](#3--checklist--usabilidade)
-5. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade)
+1. [⚡ Checklist — Performance](#1--checklist--performance)
+2. [🔒 Checklist — Segurança](#2--checklist--segurança)
+3. [👤 Checklist — Usabilidade](#3--checklist--usabilidade)
+4. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade)
 
 ### 🐞 Relatório de Defeitos Encontrados
 
@@ -765,14 +764,6 @@ Esses problemas devem ser registrados como **bugs, limitações ou melhorias**, 
 
 # 🧪 Parte 2 — Checklist de Testes Não Funcionais
 
-## Sistema avaliado
-
-**Sistema:** Clínica Psi
-**Tipo:** Sistema de gestão para clínica de psicologia
-**Tecnologias:** HTML, CSS e JavaScript
-**Armazenamento:** LocalStorage do navegador
-
----
 
 # 1. ⚡ Checklist — Performance
 
