@@ -1036,7 +1036,7 @@ Necessidade de controles paralelos ou manuais pela clínica.
 
 ### Evidência
 
-![Atendimento e pagamento nao integrados](evidencias/EVD-09-atendimento-epagamento-nao-estao-integrados.gif)
+![Atendimento e pagamento nao integrados](evidencias/EVD-09-atendimento-e-pagamento-nao-estao-integrados.gif)
 
 ---
 
