@@ -1,25 +1,46 @@
 # Desafio - Testes funcionais e não-funcionais : Clínica Psi 
 
+# 📋 Divisão das Atividades
+
+## Parte 1 — Exercícios
+
+| Atividade        | Responsável                      |
+| ---------------- | -------------------------------- |
+| Exercícios 1 e 2 | Jefferson Santino Ribeiro        |
+| Exercício 3      | Paulo Henrique de Barros Brandão |
+| Exercício 4      | Claudio Albuquerque Souza Junior |
+| Exercício 5      | Rodrigo Gomes Santiago           |
+| Exercício 6      | João Alberto                     |
+
+## Parte 2 — Checklist e Relatório
+
+| Atividade                           | Responsável                       |
+| ----------------------------------- | --------------------------------- |
+| Checklist 1 e 2                     | Alyson Veríssimo dos Prazeres     |
+| Checklist 3 e 4                     | José Mário Farias Da Silva Junior |
+| Relatórios de Defeitos e Evidências | Jefferson Santino Ribeiro         |
+
+---
 
 ## 📑 Índice
 
 ## 🧪 Parte 1 — Testes Funcionais
 
-1. [Exercício 1 — Cinco Funcionalidades do Sistema](#exercício-1---5-funcionalidades-do-sistema) Aluno: Jefferson Santino Ribeiro
-2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários) Aluno: Jefferson Santino Ribeiro
-3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração) Aluno: Paulo Henrique de Barros Brandão
-4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema) Aluno: Claudio Albuquerque Souza Junior
-5. [Exercício 5 — Testes de Aceitação](#exercício-5---testes-de-aceitação) Aluno: Rodrigo Gomes Santiago
-6. [Exercício 6 — Classificação dos Testes](#exercício-6---classificação-dos-testes) Aluno: João Alberto
+1. [Exercício 1 — Cinco Funcionalidades do Sistema](#exercício-1---cinco-funcionalidades-do-sistema)   
+2. [Exercício 2 — Testes Unitários](#exercício-2---testes-unitários) 
+3. [Exercício 3 — Testes de Integração](#exercício-3---testes-de-integração) 
+4. [Exercício 4 — Testes de Sistema](#exercício-4---testes-de-sistema) 
+5. [Exercício 5 — Testes de Aceitação](#exercício-5---testes-de-aceitação) 
+6. [Exercício 6 — Classificação dos Testes](#exercício-6---classificação-dos-testes) 
 
 ---
 
 ## 🔎 Parte 2 — Checklist de Testes Não Funcionais
 
-1. [⚡ Checklist — Performance](#1--checklist--performance) Aluno: Alyson Veríssimo dos Prazeres
-2. [🔒 Checklist — Segurança](#2--checklist--segurança) Aluno: Alyson Veríssimo dos Prazeres
-3. [👤 Checklist — Usabilidade](#3--checklist--usabilidade) Aluno: José Mário Farias Da Silva Junior
-4. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade) Aluno: José Mário Farias Da Silva Junior
+1. [⚡ Checklist — Performance](#1--checklist--performance)  
+2. [🔒 Checklist — Segurança](#2--checklist--segurança) 
+3. [👤 Checklist — Usabilidade](#3--checklist--usabilidade) 
+4. [💻 Checklist — Compatibilidade](#4--checklist--compatibilidade)
 
 ### 🐞 Relatório de Defeitos Encontrados
 
