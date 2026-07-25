@@ -1,7 +1,7 @@
 # Desafio - Testes funcionais e não-funcionais : Clínica Psi 
 
 
-# 📑 Índice
+## 📑 Índice
 
 ## 🧪 Parte 1 — Testes Funcionais
 
