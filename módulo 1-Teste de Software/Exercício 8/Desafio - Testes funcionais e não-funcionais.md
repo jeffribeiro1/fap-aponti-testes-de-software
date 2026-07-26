@@ -1,8 +1,8 @@
-# Desafio - Testes funcionais e não-funcionais : Clínica Psi 
+# Desafio - Testes funcionais e Não-Funcionais : Clínica Psi 
 
 # 📋 Divisão das Atividades
 
-## Parte 1 — Exercícios
+## Parte 1 — Testes Funcionais
 
 | Atividade        | Responsável                      |
 | ---------------- | -------------------------------- |
@@ -12,7 +12,7 @@
 | Exercício 5      | Rodrigo Gomes Santiago           |
 | Exercício 6      | João Alberto                     |
 
-## Parte 2 — Checklist e Relatório
+## Parte 2 — Checklist de Testes Não Funcionais e Relatório de Defeitos
 
 | Atividade                           | Responsável                       |
 | ----------------------------------- | --------------------------------- |
