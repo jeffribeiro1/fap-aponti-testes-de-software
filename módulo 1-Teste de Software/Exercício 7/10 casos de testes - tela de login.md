@@ -532,7 +532,7 @@ https://sistema.com/dashboard
 
 2. Acessar a página inicial do sistema.
 
-3. Clicar no botão **Sair** ou **Logout**.
+3. Clicar no botão **Sair**
 
 4. Aguardar o retorno para a tela de login.
 
