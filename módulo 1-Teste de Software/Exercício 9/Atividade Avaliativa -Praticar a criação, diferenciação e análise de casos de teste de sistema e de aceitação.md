@@ -54,3 +54,34 @@ Usuário acessa sua conta
 Usuário consulta o saldo
         ↓
 Sistema apresenta o saldo atual
+
+---
+
+## 3. Variações de Fluxo
+
+As **variações de fluxo** são situações diferentes do caminho principal.
+
+Como QA, não devemos testar apenas quando tudo funciona corretamente.
+
+Também precisamos verificar situações como:
+
+* Dados incorretos;
+* Campos vazios;
+* Valores diferentes;
+* Erros do sistema.
+
+### Exemplos de Variações
+
+| Variação               | Situação                                     | Comportamento Esperado                                        |
+| ---------------------- | -------------------------------------------- | ------------------------------------------------------------- |
+| Login correto          | Usuário informa dados válidos                | O acesso deve ser permitido                                   |
+| Senha incorreta        | Usuário informa uma senha errada             | O acesso deve ser negado e uma mensagem de erro deve aparecer |
+| Usuário incorreto      | Usuário informa um usuário inexistente       | O acesso deve ser negado                                      |
+| Usuário vazio          | Usuário não preenche o campo de usuário      | O sistema deve informar que o campo é obrigatório             |
+| Senha vazia            | Usuário não preenche a senha                 | O sistema deve informar que o campo é obrigatório             |
+| Todos os campos vazios | Usuário tenta entrar sem preencher os campos | O login não deve ser realizado                                |
+| Saldo positivo         | A conta possui dinheiro disponível           | O sistema deve apresentar o saldo corretamente                |
+| Saldo zero             | A conta não possui saldo disponível          | O sistema deve apresentar saldo igual a zero                  |
+| Saldo negativo         | A conta está com saldo negativo              | O sistema deve apresentar corretamente o valor negativo       |
+| Falha na consulta      | Ocorre algum problema ao consultar o saldo   | O sistema deve apresentar uma mensagem de erro                |
+
