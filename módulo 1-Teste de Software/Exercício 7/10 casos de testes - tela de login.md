@@ -23,15 +23,7 @@
 
 * A conta deve estar ativa.
 
-  
 
-### Dados de teste
-
-  
-
-* E-mail: `usuario@teste.com`
-
-* Senha: `Teste@123`
 
   
 
@@ -83,15 +75,6 @@
 
 * O usuário deve estar cadastrado no sistema.
 
-  
-
-### Dados de teste
-
-  
-
-* E-mail: `usuario@teste.com`
-
-* Senha: `SenhaErrada123`
 
   
 
@@ -127,19 +110,20 @@
 
 ## CT-03 — Campo de e-mail vazio
 
-  
-
 **Tipo:** Validação
-
-  
 
 **Objetivo:** Verificar se o campo de e-mail é obrigatório.
 
-  
+
+### Pré-condições
+
+- O sistema deve estar disponível e funcionando.
+- A tela de login deve estar acessível.
+- O usuário não deve estar autenticado no sistema.
+- Os campos **E-mail** e **Senha** e o botão **Entrar** devem estar visíveis e habilitados.
+
 
 ### Passos
-
-  
 
 1. Acessar a tela de login.
 
@@ -149,11 +133,8 @@
 
 4. Clicar no botão **Entrar**.
 
-  
 
 ### Resultado esperado
-
-  
 
 * O login não deve ser realizado.
 
@@ -176,6 +157,14 @@
   
 
 **Objetivo:** Verificar se o preenchimento do campo de senha é obrigatório.
+
+
+## Pré-condições
+
+- O sistema deve estar disponível e funcionando.
+- A tela de login deve estar acessível.
+- O usuário não deve estar autenticado no sistema.
+- Os campos **E-mail** e **Senha** e o botão **Entrar** devem estar visíveis e habilitados.
 
   
 
@@ -219,15 +208,14 @@
 
 **Objetivo:** Verificar se o sistema identifica um e-mail digitado em formato inválido.
 
-  
 
-### Dados de teste
+### Pré-condições
 
-  
+- O sistema deve estar disponível e funcionando.
+- A tela de login deve estar acessível.
+- O usuário não deve estar autenticado no sistema.
+- Os campos **E-mail** e **Senha** e o botão **Entrar** devem estar visíveis e habilitados.
 
-* E-mail: `usuarioteste.com`
-
-* Senha: `Teste@123`
 
   
 
@@ -280,15 +268,6 @@
 
 * O usuário deve estar cadastrado e ativo.
 
-  
-
-### Dados de teste
-
-  
-
-* E-mail: `usuario@teste.com`
-
-* Senha: `Teste@123`
 
   
 
@@ -396,15 +375,6 @@
 
 * O usuário deve estar cadastrado.
 
-  
-
-### Dados de teste
-
-  
-
-* E-mail: `usuario@teste.com`
-
-* Senha: `SenhaErrada`
 
   
 
