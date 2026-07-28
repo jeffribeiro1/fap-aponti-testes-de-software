@@ -1,4 +1,4 @@
-# Atividade Avaliativa: Casos de Teste — Tela de Login
+# Atividade Avaliativa: Casos de Teste - Tela de Login
 
   
   
