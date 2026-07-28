@@ -33,9 +33,9 @@
 
 1. Acessar a tela de login.
 
-2. Digitar `usuario@teste.com` no campo de e-mail.
+2. Digitar o usuario: `(usuario@teste.com)` no campo de e-mail.
 
-3. Digitar `Teste@123` no campo de senha.
+3. Digitar a senha: `(Teste@123)` no campo de senha.
 
 4. Clicar no botão **Entrar**.
 
@@ -84,9 +84,9 @@
 
 1. Acessar a tela de login.
 
-2. Digitar `usuario@teste.com` no campo de e-mail.
+2. Digitar o usuário:  `(usuario@teste.com)` no campo de e-mail.
 
-3. Digitar `SenhaErrada123` no campo de senha.
+3. Digitar a senha: `(SenhaErrada123)` no campo de senha.
 
 4. Clicar no botão **Entrar**.
 
@@ -129,7 +129,7 @@
 
 2. Deixar o campo de e-mail vazio.
 
-3. Digitar `Teste@123` no campo de senha.
+3. Digitar: `(Teste@123)` no campo de senha.
 
 4. Clicar no botão **Entrar**.
 
@@ -174,7 +174,7 @@
 
 1. Acessar a tela de login.
 
-2. Digitar `usuario@teste.com` no campo de e-mail.
+2. Digitar: `(usuario@teste.com)` no campo de e-mail.
 
 3. Deixar o campo de senha vazio.
 
@@ -225,9 +225,9 @@
 
 1. Acessar a tela de login.
 
-2. Digitar `usuarioteste.com` no campo de e-mail.
+2. Digitar: `(usuarioteste.com)` no campo de e-mail.
 
-3. Digitar `Teste@123` no campo de senha.
+3. Digitar: `(Teste@123)` no campo de senha.
 
 4. Clicar no botão **Entrar**.
 
@@ -279,7 +279,7 @@
 
 2. Digitar um espaço antes do e-mail.
 
-3. Digitar `usuario@teste.com`.
+3. Digitar: `(usuario@teste.com)`.
 
 4. Adicionar um espaço depois do e-mail.
 
@@ -448,7 +448,7 @@ Exemplo:
 
 ```text
 
-https://sistema.com/dashboard
+https://sistemapsi.com/dashboard
 
 ```
 
