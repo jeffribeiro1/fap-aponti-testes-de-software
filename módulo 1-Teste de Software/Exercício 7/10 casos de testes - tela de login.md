@@ -1,9 +1,10 @@
-# Casos de Teste — Tela de Login
+# Atividade Avaliativa: Casos de Teste — Tela de Login
 
   
   
 
-## CT-01 — Login com usuário e senha válidos
+## ID: CT-01
+## Título: Login com usuário e senha válidos
 
   
 
@@ -57,7 +58,8 @@
 
   
 
-## CT-02 — Login com senha incorreta
+## ID: CT-02 
+## Título: Login com senha incorreta
 
   
 
@@ -108,7 +110,8 @@
 
   
 
-## CT-03 — Campo de e-mail vazio
+## ID: CT-03
+## Título: Campo de e-mail vazio
 
 **Tipo:** Validação
 
@@ -148,7 +151,8 @@
 
   
 
-## CT-04 — Campo de senha vazio
+## ID: CT-04
+## Título: Campo de senha vazio
 
   
 
@@ -198,7 +202,8 @@
 
   
 
-## CT-05 — E-mail em formato inválido
+## ID: CT-05
+## Título: E-mail em formato inválido
 
   
 
@@ -250,7 +255,8 @@
   
   
 
-## CT-06 — E-mail com espaços antes e depois
+## ID: CT-06 
+## Título: E-mail com espaços antes e depois
 
   
 
@@ -305,7 +311,8 @@
 
   
 
-## CT-07 — Vários cliques rápidos no botão Entrar
+## ID: CT-07 
+## Título: Vários cliques rápidos no botão Entrar
 
   
 
@@ -357,7 +364,8 @@
 
   
 
-## CT-08 — Várias tentativas seguidas com senha incorreta
+## ID: CT-08 
+## Título: Várias tentativas seguidas com senha incorreta
 
   
 
@@ -410,7 +418,8 @@
 
   
 
-## CT-09 — Acessar página interna sem realizar login
+## ID: CT-09 
+## Título: Acessar página interna sem realizar login
 
   
 
@@ -474,7 +483,8 @@ https://sistemapsi.com/dashboard
 
   
 
-## CT-10 — Voltar pelo navegador após realizar logout
+## ID: CT-10 
+## Título: Voltar pelo navegador após realizar logout
 
   
 
