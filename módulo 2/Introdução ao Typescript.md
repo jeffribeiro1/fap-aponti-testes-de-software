@@ -3747,5 +3747,1040 @@ Se você está começando TypeScript, memorize primeiro:
 Depois avance para `typeof`, `as`, `in`, `instanceof` e os operadores bitwise.
 
 
+===
+
+# 🔄 TypeScript — Loops (Laços de Repetição)
+
+## 1. O que são Loops?
+
+**Loops** são estruturas utilizadas para **repetir um determinado bloco de código várias vezes**, sem precisar escrever o mesmo código repetidamente.
+
+Por exemplo, imagine que você tenha uma lista com 5 pacientes:
+
+```ts
+const pacientes = [
+  "João",
+  "Maria",
+  "Carlos",
+  "Ana",
+  "Pedro"
+];
+```
+
+Sem um loop, você teria que fazer:
+
+```ts
+console.log(pacientes[0]);
+console.log(pacientes[1]);
+console.log(pacientes[2]);
+console.log(pacientes[3]);
+console.log(pacientes[4]);
+```
+
+Com um loop:
+
+```ts
+for (const paciente of pacientes) {
+  console.log(paciente);
+}
+```
+
+O resultado será o mesmo, mas o código fica muito mais organizado e escalável.
+
+---
+
+# 2. `for`
+
+O `for` é um dos loops mais utilizados.
+
+### Exemplo:
+
+```ts
+for (let i = 0; i < 5; i++) {
+  console.log(i);
+}
+```
+
+Resultado:
+
+```text
+0
+1
+2
+3
+4
+```
+
+## Entendendo cada parte
+
+```ts
+for (let i = 0; i < 5; i++)
+```
+
+Temos três partes:
+
+### 1. Inicialização
+
+```ts
+let i = 0
+```
+
+Cria uma variável chamada `i` começando em `0`.
+
+---
+
+### 2. Condição
+
+```ts
+i < 5
+```
+
+O loop continuará enquanto essa condição for verdadeira.
+
+Quando `i` chegar a `5`:
+
+```ts
+5 < 5
+```
+
+será `false`.
+
+O loop termina.
+
+---
+
+### 3. Incremento
+
+```ts
+i++
+```
+
+A cada repetição, `i` aumenta 1.
+
+É equivalente a:
+
+```ts
+i = i + 1;
+```
+
+---
+
+## Exemplo passo a passo
+
+```ts
+for (let i = 0; i < 3; i++) {
+  console.log("Executando");
+}
+```
+
+A execução será:
+
+```text
+i = 0 → executa
+i = 1 → executa
+i = 2 → executa
+i = 3 → para
+```
+
+---
+
+# 3. `for...of`
+
+O `for...of` é muito útil para percorrer **arrays**.
+
+```ts
+const pacientes = [
+  "João",
+  "Maria",
+  "Carlos"
+];
+
+for (const paciente of pacientes) {
+  console.log(paciente);
+}
+```
+
+Resultado:
+
+```text
+João
+Maria
+Carlos
+```
+
+Aqui:
+
+```ts
+const paciente
+```
+
+representa o elemento atual.
+
+E:
+
+```ts
+of pacientes
+```
+
+significa que estamos percorrendo os valores do array `pacientes`.
+
+### Forma de pensar:
+
+```text
+pacientes
+   ↓
+João     → paciente
+Maria    → paciente
+Carlos   → paciente
+```
+
+---
+
+# 4. `for...in`
+
+O `for...in` normalmente é utilizado para percorrer as **propriedades de um objeto**.
+
+```ts
+const paciente = {
+  nome: "João",
+  idade: 30,
+  cidade: "Recife"
+};
+
+for (const propriedade in paciente) {
+  console.log(propriedade);
+}
+```
+
+Resultado:
+
+```text
+nome
+idade
+cidade
+```
+
+A variável:
+
+```ts
+propriedade
+```
+
+recebe o nome da propriedade.
+
+---
+
+## Obtendo o valor
+
+Podemos utilizar:
+
+```ts
+paciente[propriedade]
+```
+
+Porém, em TypeScript, isso pode exigir cuidados de tipagem dependendo do tipo do objeto.
+
+Um exemplo simples:
+
+```ts
+const paciente: Record<string, string | number> = {
+  nome: "João",
+  idade: 30,
+  cidade: "Recife"
+};
+
+for (const propriedade in paciente) {
+  console.log(paciente[propriedade]);
+}
+```
+
+Resultado:
+
+```text
+João
+30
+Recife
+```
+
+---
+
+# 5. `while`
+
+O `while` executa o código **enquanto uma condição for verdadeira**.
+
+```ts
+let contador = 0;
+
+while (contador < 5) {
+  console.log(contador);
+
+  contador++;
+}
+```
+
+Resultado:
+
+```text
+0
+1
+2
+3
+4
+```
+
+A estrutura é:
+
+```ts
+while (condição) {
+  // código
+}
+```
+
+---
+
+## ⚠️ Cuidado com loops infinitos
+
+Veja este exemplo:
+
+```ts
+let contador = 0;
+
+while (contador < 5) {
+  console.log(contador);
+}
+```
+
+Esse código nunca altera `contador`.
+
+Portanto:
+
+```ts
+contador < 5
+```
+
+continuará sempre verdadeiro.
+
+O resultado é um **loop infinito**.
+
+O correto seria:
+
+```ts
+let contador = 0;
+
+while (contador < 5) {
+  console.log(contador);
+
+  contador++;
+}
+```
+
+---
+
+# 6. `do...while`
+
+O `do...while` é parecido com o `while`, mas existe uma diferença importante:
+
+> O código é executado **pelo menos uma vez**.
+
+```ts
+let contador = 10;
+
+do {
+  console.log(contador);
+
+  contador++;
+} while (contador < 5);
+```
+
+Mesmo que:
+
+```ts
+contador < 5
+```
+
+seja falso desde o início, o código será executado uma vez.
+
+Resultado:
+
+```text
+10
+```
+
+---
+
+# 7. Diferença entre `while` e `do...while`
+
+### `while`
+
+Primeiro verifica a condição:
+
+```ts
+while (condicao) {
+  // executa
+}
+```
+
+Se a condição for falsa inicialmente, não executa nenhuma vez.
+
+### `do...while`
+
+Primeiro executa e depois verifica:
+
+```ts
+do {
+  // executa
+} while (condicao);
+```
+
+Portanto, executa pelo menos uma vez.
+
+---
+
+# 8. `break`
+
+O `break` serve para **interromper o loop imediatamente**.
+
+```ts
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+
+  console.log(i);
+}
+```
+
+Resultado:
+
+```text
+0
+1
+2
+3
+4
+```
+
+Quando:
+
+```ts
+i === 5
+```
+
+for verdadeiro:
+
+```ts
+break;
+```
+
+encerra o loop.
+
+---
+
+# 9. `continue`
+
+O `continue` não encerra o loop.
+
+Ele apenas **pula a repetição atual** e continua para a próxima.
+
+```ts
+for (let i = 0; i < 5; i++) {
+  if (i === 2) {
+    continue;
+  }
+
+  console.log(i);
+}
+```
+
+Resultado:
+
+```text
+0
+1
+3
+4
+```
+
+O número `2` foi ignorado.
+
+---
+
+# 10. `for` percorrendo pacientes
+
+Um exemplo mais próximo de um sistema de clínica:
+
+```ts
+interface Paciente {
+  nome: string;
+  idade: number;
+}
+
+const pacientes: Paciente[] = [
+  {
+    nome: "João",
+    idade: 25
+  },
+  {
+    nome: "Maria",
+    idade: 17
+  },
+  {
+    nome: "Carlos",
+    idade: 35
+  }
+];
+
+for (const paciente of pacientes) {
+  console.log(paciente.nome);
+}
+```
+
+Resultado:
+
+```text
+João
+Maria
+Carlos
+```
+
+---
+
+# 11. Loop com condição
+
+Podemos combinar loops com `if`.
+
+```ts
+for (const paciente of pacientes) {
+  if (paciente.idade >= 18) {
+    console.log(`${paciente.nome} é maior de idade`);
+  }
+}
+```
+
+Resultado:
+
+```text
+João é maior de idade
+Carlos é maior de idade
+```
+
+Observe que:
+
+```ts
+paciente.idade >= 18
+```
+
+é a condição utilizada para decidir o que será executado.
+
+---
+
+# 12. Loop com contador
+
+Também podemos contar elementos.
+
+```ts
+let quantidade = 0;
+
+for (const paciente of pacientes) {
+  quantidade++;
+}
+
+console.log(quantidade);
+```
+
+Resultado:
+
+```text
+3
+```
+
+A cada paciente encontrado:
+
+```ts
+quantidade++;
+```
+
+aumenta o contador.
+
+---
+
+# 13. Loops e arrays
+
+Loops são muito utilizados para trabalhar com arrays.
+
+```ts
+const numeros: number[] = [10, 20, 30, 40];
+
+for (const numero of numeros) {
+  console.log(numero);
+}
+```
+
+Podemos realizar cálculos:
+
+```ts
+let soma = 0;
+
+for (const numero of numeros) {
+  soma += numero;
+}
+
+console.log(soma);
+```
+
+Resultado:
+
+```text
+100
+```
+
+A expressão:
+
+```ts
+soma += numero;
+```
+
+é equivalente a:
+
+```ts
+soma = soma + numero;
+```
+
+---
+
+# 14. Loops aninhados
+
+É possível colocar um loop dentro de outro.
+
+Isso é chamado de **loop aninhado**.
+
+```ts
+for (let i = 1; i <= 3; i++) {
+  for (let j = 1; j <= 3; j++) {
+    console.log(i, j);
+  }
+}
+```
+
+Resultado:
+
+```text
+1 1
+1 2
+1 3
+
+2 1
+2 2
+2 3
+
+3 1
+3 2
+3 3
+```
+
+Isso é muito utilizado para trabalhar com estruturas como:
+
+* tabelas;
+* matrizes;
+* grids;
+* combinações;
+* dados multidimensionais.
+
+---
+
+# 15. Loop tradicional vs `for...of`
+
+### `for`
+
+```ts
+for (let i = 0; i < pacientes.length; i++) {
+  console.log(pacientes[i]);
+}
+```
+
+Aqui trabalhamos diretamente com o índice.
+
+### `for...of`
+
+```ts
+for (const paciente of pacientes) {
+  console.log(paciente);
+}
+```
+
+Aqui recebemos diretamente o elemento.
+
+Para simplesmente percorrer os valores de um array, normalmente o `for...of` é mais legível.
+
+---
+
+# 16. Loop com índice
+
+Quando precisamos do índice, podemos usar:
+
+```ts
+for (const [indice, paciente] of pacientes.entries()) {
+  console.log(indice, paciente.nome);
+}
+```
+
+Resultado:
+
+```text
+0 João
+1 Maria
+2 Carlos
+```
+
+`entries()` fornece:
+
+```text
+[índice, valor]
+```
+
+---
+
+# 17. Loops e testes de software
+
+Loops também aparecem bastante em **QA e automação de testes**.
+
+Imagine que queremos verificar vários pacientes:
+
+```ts
+const pacientes = [
+  "João",
+  "Maria",
+  "Carlos"
+];
+
+for (const paciente of pacientes) {
+  console.log(`Validando paciente: ${paciente}`);
+}
+```
+
+Em uma automação, poderíamos utilizar uma estrutura semelhante para executar uma mesma validação para vários dados.
+
+Por exemplo:
+
+```ts
+const cpfs = [
+  "11111111111",
+  "22222222222",
+  "33333333333"
+];
+
+for (const cpf of cpfs) {
+  console.log(`Testando CPF: ${cpf}`);
+}
+```
+
+Isso é um conceito importante para **testes parametrizados**, onde o mesmo cenário pode ser executado utilizando diferentes massas de teste.
+
+---
+
+# 18. `forEach()`
+
+Além dos loops tradicionais, JavaScript/TypeScript possui métodos de array.
+
+Um dos mais conhecidos é:
+
+```ts
+forEach()
+```
+
+Exemplo:
+
+```ts
+const pacientes = [
+  "João",
+  "Maria",
+  "Carlos"
+];
+
+pacientes.forEach((paciente) => {
+  console.log(paciente);
+});
+```
+
+Resultado:
+
+```text
+João
+Maria
+Carlos
+```
+
+A função:
+
+```ts
+(paciente) => {
+  console.log(paciente);
+}
+```
+
+é executada para cada elemento.
+
+---
+
+# 19. `forEach()` com índice
+
+Podemos receber o índice também:
+
+```ts
+pacientes.forEach((paciente, indice) => {
+  console.log(indice, paciente);
+});
+```
+
+Resultado:
+
+```text
+0 João
+1 Maria
+2 Carlos
+```
+
+---
+
+# 20. ⚠️ `forEach()` não substitui todos os loops
+
+Um ponto importante:
+
+```ts
+forEach()
+```
+
+não possui um `break` tradicional.
+
+Por exemplo, isto não funciona como esperado:
+
+```ts
+pacientes.forEach((paciente) => {
+  if (paciente === "Maria") {
+    break;
+  }
+});
+```
+
+Para situações em que precisamos interromper a execução, um `for...of` costuma ser uma opção melhor:
+
+```ts
+for (const paciente of pacientes) {
+  if (paciente === "Maria") {
+    break;
+  }
+
+  console.log(paciente);
+}
+```
+
+---
+
+# 21. Resumo dos principais loops
+
+| Estrutura    | Uso principal                                      |
+| ------------ | -------------------------------------------------- |
+| `for`        | Repetições controladas por contador/índice         |
+| `for...of`   | Percorrer valores de arrays/iteráveis              |
+| `for...in`   | Percorrer propriedades de objetos                  |
+| `while`      | Repetir enquanto uma condição for verdadeira       |
+| `do...while` | Executar pelo menos uma vez e repetir por condição |
+| `forEach()`  | Executar uma função para cada elemento de um array |
+
+---
+
+# 22. Os mais importantes para aprender primeiro
+
+Para quem está começando com TypeScript, recomendo esta ordem:
+
+```text
+1. for
+2. for...of
+3. while
+4. break
+5. continue
+6. forEach()
+7. for...in
+8. do...while
+```
+
+Principalmente:
+
+```ts
+for
+```
+
+```ts
+for...of
+```
+
+e:
+
+```ts
+forEach()
+```
+
+porque aparecem frequentemente em código Front-End e TypeScript.
+
+---
+
+# 23. Exemplo completo
+
+```ts
+interface Paciente {
+  nome: string;
+  idade: number;
+  ativo: boolean;
+}
+
+const pacientes: Paciente[] = [
+  {
+    nome: "João",
+    idade: 25,
+    ativo: true
+  },
+  {
+    nome: "Maria",
+    idade: 17,
+    ativo: false
+  },
+  {
+    nome: "Carlos",
+    idade: 35,
+    ativo: true
+  }
+];
+
+for (const paciente of pacientes) {
+  if (paciente.ativo) {
+    console.log(`${paciente.nome} está ativo`);
+  }
+}
+```
+
+Resultado:
+
+```text
+João está ativo
+Carlos está ativo
+```
+
+Nesse exemplo combinamos vários conceitos:
+
+```ts
+interface
+```
+
+→ define a estrutura do objeto.
+
+```ts
+Paciente[]
+```
+
+→ define um array de pacientes.
+
+```ts
+for...of
+```
+
+→ percorre os pacientes.
+
+```ts
+if
+```
+
+→ verifica uma condição.
+
+```ts
+paciente.ativo
+```
+
+→ acessa uma propriedade.
+
+```ts
+`${paciente.nome}`
+```
+
+→ insere o nome dentro de uma string.
+
+---
+
+# 🎯 Resumo para memorizar
+
+```text
+FOR
+↓
+Repetição controlada
+
+FOR...OF
+↓
+Percorre valores
+
+FOR...IN
+↓
+Percorre propriedades
+
+WHILE
+↓
+Repete enquanto for verdadeiro
+
+DO...WHILE
+↓
+Executa pelo menos uma vez
+
+BREAK
+↓
+Para o loop
+
+CONTINUE
+↓
+Pula a repetição atual
+
+FOREACH
+↓
+Executa uma função para cada elemento
+```
+
+### Regra prática
+
+Se você quiser:
+
+**"Repita X vezes"**
+
+```ts
+for
+```
+
+**"Percorra os elementos de um array"**
+
+```ts
+for...of
+```
+
+**"Percorra as propriedades de um objeto"**
+
+```ts
+for...in
+```
+
+**"Repita enquanto uma condição for verdadeira"**
+
+```ts
+while
+```
+
+**"Execute uma vez antes de verificar a condição"**
+
+```ts
+do...while
+```
+
+**"Execute uma função para cada item do array"**
+
+```ts
+forEach()
+```
+
+
 
 
