@@ -2699,6 +2699,1052 @@ As principais boas práticas que você deve memorizar são:
 Um bom TypeScript não é aquele que possui tipos em todo lugar. É aquele em que os **tipos ajudam o desenvolvedor a entender e proteger o código**.
 
 
+===
+
+# 🟦 Operadores do TypeScript
+
+Os operadores são símbolos ou palavras utilizados para realizar operações com valores e variáveis.
+
+Exemplo:
+
+```typescript
+const resultado = 10 + 5;
+```
+
+O operador `+` realiza uma soma.
+
+---
+
+# 1. Operadores aritméticos
+
+São utilizados para realizar cálculos matemáticos.
+
+| Operador | Nome             | Exemplo  | Resultado |
+| -------- | ---------------- | -------- | --------- |
+| `+`      | Soma             | `10 + 5` | `15`      |
+| `-`      | Subtração        | `10 - 5` | `5`       |
+| `*`      | Multiplicação    | `10 * 5` | `50`      |
+| `/`      | Divisão          | `10 / 5` | `2`       |
+| `%`      | Resto da divisão | `10 % 3` | `1`       |
+| `**`     | Exponenciação    | `2 ** 3` | `8`       |
+
+## Exemplo
+
+```typescript
+const soma = 10 + 5;
+const subtracao = 10 - 5;
+const multiplicacao = 10 * 5;
+const divisao = 10 / 5;
+const resto = 10 % 3;
+const potencia = 2 ** 3;
+
+console.log(soma);
+console.log(subtracao);
+console.log(multiplicacao);
+console.log(divisao);
+console.log(resto);
+console.log(potencia);
+```
+
+---
+
+# 2. Operadores de atribuição
+
+São utilizados para atribuir ou alterar valores de variáveis.
+
+## Atribuição simples `=`
+
+```typescript
+let idade = 30;
+```
+
+O `=` significa:
+
+> Coloque o valor `30` dentro da variável `idade`.
+
+---
+
+## Atribuição com soma `+=`
+
+```typescript
+let idade = 30;
+
+idade += 1;
+```
+
+É equivalente a:
+
+```typescript
+idade = idade + 1;
+```
+
+Resultado:
+
+```text
+31
+```
+
+---
+
+## Atribuição com subtração `-=`
+
+```typescript
+let saldo = 100;
+
+saldo -= 20;
+```
+
+Equivale a:
+
+```typescript
+saldo = saldo - 20;
+```
+
+Resultado:
+
+```text
+80
+```
+
+---
+
+## Atribuição com multiplicação `*=`
+
+```typescript
+let valor = 10;
+
+valor *= 2;
+```
+
+Equivale a:
+
+```typescript
+valor = valor * 2;
+```
+
+Resultado:
+
+```text
+20
+```
+
+---
+
+## Atribuição com divisão `/=`
+
+```typescript
+let valor = 100;
+
+valor /= 4;
+```
+
+Equivale a:
+
+```typescript
+valor = valor / 4;
+```
+
+Resultado:
+
+```text
+25
+```
+
+---
+
+## Atribuição com resto `%=`
+
+```typescript
+let valor = 10;
+
+valor %= 3;
+```
+
+Equivale a:
+
+```typescript
+valor = valor % 3;
+```
+
+Resultado:
+
+```text
+1
+```
+
+---
+
+# 3. Operadores de comparação
+
+São utilizados para comparar valores.
+
+O resultado normalmente será um `boolean`:
+
+```text
+true
+false
+```
+
+| Operador | Significado            |
+| -------- | ---------------------- |
+| `==`     | Igual                  |
+| `===`    | Estritamente igual     |
+| `!=`     | Diferente              |
+| `!==`    | Estritamente diferente |
+| `>`      | Maior que              |
+| `<`      | Menor que              |
+| `>=`     | Maior ou igual         |
+| `<=`     | Menor ou igual         |
+
+---
+
+# 4. `==` — igualdade
+
+Compara os valores permitindo conversão de tipo.
+
+```typescript
+console.log(10 == "10");
+```
+
+Resultado:
+
+```text
+true
+```
+
+Isso acontece porque o JavaScript pode converter os tipos durante a comparação.
+
+Por isso, em TypeScript, normalmente é melhor evitar `==`.
+
+---
+
+# 5. `===` — igualdade estrita
+
+Compara **valor e tipo**.
+
+```typescript
+console.log(10 === 10);
+```
+
+Resultado:
+
+```text
+true
+```
+
+Mas:
+
+```typescript
+console.log(10 === "10");
+```
+
+Resultado:
+
+```text
+false
+```
+
+Porque:
+
+```text
+10   → number
+"10" → string
+```
+
+### Boa prática
+
+Prefira:
+
+```typescript
+===
+```
+
+em vez de:
+
+```typescript
+==
+```
+
+---
+
+# 6. `!=` e `!==`
+
+`!=` verifica se os valores são diferentes.
+
+```typescript
+console.log(10 != 20);
+```
+
+Resultado:
+
+```text
+true
+```
+
+`!==` verifica se valor ou tipo são diferentes.
+
+```typescript
+console.log(10 !== "10");
+```
+
+Resultado:
+
+```text
+true
+```
+
+Em TypeScript, normalmente prefira:
+
+```typescript
+!==
+```
+
+---
+
+# 7. Maior e menor
+
+Podemos comparar números:
+
+```typescript
+const idade = 30;
+
+console.log(idade > 18);
+```
+
+Resultado:
+
+```text
+true
+```
+
+Também:
+
+```typescript
+console.log(idade < 18);
+```
+
+Resultado:
+
+```text
+false
+```
+
+---
+
+# 8. Operadores lógicos
+
+São utilizados para combinar condições.
+
+Os principais são:
+
+```text
+&&
+||
+!
+```
+
+---
+
+# 9. `&&` — AND / E
+
+Significa:
+
+> Todas as condições precisam ser verdadeiras.
+
+Exemplo:
+
+```typescript
+const idade = 25;
+const possuiDocumento = true;
+
+if (idade >= 18 && possuiDocumento) {
+    console.log("Pode entrar");
+}
+```
+
+Para entrar, as duas condições precisam ser verdadeiras:
+
+```text
+idade >= 18
+        E
+possuiDocumento === true
+```
+
+---
+
+# 10. `||` — OR / OU
+
+Significa:
+
+> Pelo menos uma condição precisa ser verdadeira.
+
+```typescript
+const administrador = false;
+const psicologo = true;
+
+if (administrador || psicologo) {
+    console.log("Pode acessar");
+}
+```
+
+Como `psicologo` é `true`, a condição será verdadeira.
+
+---
+
+# 11. `!` — NOT / NÃO
+
+Inverte um valor booleano.
+
+```typescript
+const ativo = true;
+
+console.log(!ativo);
+```
+
+Resultado:
+
+```text
+false
+```
+
+Outro exemplo:
+
+```typescript
+const usuarioBloqueado = false;
+
+if (!usuarioBloqueado) {
+    console.log("Usuário pode acessar");
+}
+```
+
+`!usuarioBloqueado` significa:
+
+> O usuário **não está bloqueado**.
+
+---
+
+# 12. Operador ternário `? :`
+
+O operador ternário é uma forma curta de escrever uma condição.
+
+Exemplo:
+
+```typescript
+const idade = 20;
+
+const status = idade >= 18
+    ? "Maior de idade"
+    : "Menor de idade";
+
+console.log(status);
+```
+
+A estrutura é:
+
+```text
+condição ? valor_se_verdadeiro : valor_se_falso
+```
+
+Nesse exemplo:
+
+```typescript
+idade >= 18
+```
+
+é a condição.
+
+Se for verdadeira:
+
+```typescript
+"Maior de idade"
+```
+
+Se for falsa:
+
+```typescript
+"Menor de idade"
+```
+
+---
+
+# 13. Operador `typeof`
+
+O `typeof` verifica o tipo de um valor em tempo de execução.
+
+```typescript
+const nome = "João";
+
+console.log(typeof nome);
+```
+
+Resultado:
+
+```text
+string
+```
+
+Outro exemplo:
+
+```typescript
+const idade = 30;
+
+console.log(typeof idade);
+```
+
+Resultado:
+
+```text
+number
+```
+
+Podemos utilizar em uma condição:
+
+```typescript
+const valor: unknown = "Olá";
+
+if (typeof valor === "string") {
+    console.log(valor.toUpperCase());
+}
+```
+
+Aqui o `typeof` ajuda o TypeScript a entender que `valor` é uma `string` dentro do `if`.
+
+---
+
+# 14. Operador `instanceof`
+
+Verifica se um objeto pertence a uma determinada classe.
+
+```typescript
+class Usuario {
+    nome: string;
+
+    constructor(nome: string) {
+        this.nome = nome;
+    }
+}
+
+const usuario = new Usuario("João");
+
+console.log(usuario instanceof Usuario);
+```
+
+Resultado:
+
+```text
+true
+```
+
+O `instanceof` é muito utilizado quando trabalhamos com classes.
+
+---
+
+# 15. Operador `in`
+
+Verifica se uma propriedade existe em um objeto.
+
+```typescript
+const paciente = {
+    nome: "João",
+    idade: 30
+};
+
+console.log("nome" in paciente);
+```
+
+Resultado:
+
+```text
+true
+```
+
+Mas:
+
+```typescript
+console.log("telefone" in paciente);
+```
+
+Resultado:
+
+```text
+false
+```
+
+Também pode ser utilizado para **narrowing** de tipos.
+
+---
+
+# 16. Operador `?.` — Optional Chaining
+
+O `?.` permite acessar propriedades sem causar erro caso o valor anterior seja `null` ou `undefined`.
+
+Exemplo:
+
+```typescript
+const paciente = {
+    nome: "João",
+    endereco: {
+        cidade: "Recife"
+    }
+};
+
+console.log(paciente.endereco?.cidade);
+```
+
+Resultado:
+
+```text
+Recife
+```
+
+Imagine que `endereco` não exista:
+
+```typescript
+const paciente = {
+    nome: "João"
+};
+
+console.log(paciente.endereco?.cidade);
+```
+
+O `?.` evita que a aplicação tente acessar uma propriedade inexistente diretamente.
+
+---
+
+# 17. Operador `??` — Nullish Coalescing
+
+O `??` permite fornecer um valor padrão quando o valor anterior é `null` ou `undefined`.
+
+```typescript
+const nome = null;
+
+const nomeExibido = nome ?? "Nome não informado";
+
+console.log(nomeExibido);
+```
+
+Resultado:
+
+```text
+Nome não informado
+```
+
+Outro exemplo:
+
+```typescript
+const telefone = undefined;
+
+const telefoneExibido = telefone ?? "Telefone não informado";
+```
+
+---
+
+# 18. Diferença entre `??` e `||`
+
+Essa diferença é importante.
+
+Com `||`:
+
+```typescript
+const valor = 0 || 100;
+
+console.log(valor);
+```
+
+Resultado:
+
+```text
+100
+```
+
+Isso acontece porque `0` é considerado um valor **falsy**.
+
+Com `??`:
+
+```typescript
+const valor = 0 ?? 100;
+
+console.log(valor);
+```
+
+Resultado:
+
+```text
+0
+```
+
+O `??` só utiliza o valor padrão quando o primeiro valor é:
+
+```text
+null
+undefined
+```
+
+Por isso, quando você quer tratar especificamente `null` e `undefined`, `??` geralmente é mais adequado.
+
+---
+
+# 19. Operador `!` após uma variável
+
+Existe outro uso do `!` no TypeScript.
+
+Ele pode ser utilizado para informar ao TypeScript que você tem certeza de que um valor não é `null` ou `undefined`.
+
+Exemplo:
+
+```typescript
+const elemento = document.querySelector("#nome")!;
+```
+
+O `!` nesse caso é chamado de **Non-null Assertion Operator**.
+
+Ele significa:
+
+> "Eu sei que esse valor não será `null` ou `undefined`."
+
+### ⚠️ Cuidado
+
+O TypeScript confiará em você.
+
+Se o elemento não existir, poderá ocorrer um erro durante a execução.
+
+Por isso, quando possível, prefira uma verificação:
+
+```typescript
+const elemento = document.querySelector("#nome");
+
+if (elemento) {
+    console.log(elemento);
+}
+```
+
+---
+
+# 20. Operador `as` — Type Assertion
+
+O `as` permite informar ao TypeScript que você deseja tratar um valor como determinado tipo.
+
+Exemplo:
+
+```typescript
+const valor: unknown = "Olá";
+
+const texto = valor as string;
+
+console.log(texto.toUpperCase());
+```
+
+Aqui:
+
+```typescript
+valor as string
+```
+
+significa:
+
+> Trate `valor` como uma `string`.
+
+### ⚠️ Importante
+
+O `as` **não converte o valor**.
+
+Por exemplo:
+
+```typescript
+const valor = "10" as unknown as number;
+```
+
+Isso não transforma a string `"10"` no número `10`.
+
+Para converter de verdade:
+
+```typescript
+const valor = Number("10");
+```
+
+---
+
+# 21. Operadores de incremento `++`
+
+Adiciona `1` ao valor.
+
+```typescript
+let contador = 0;
+
+contador++;
+```
+
+Agora:
+
+```text
+contador = 1
+```
+
+É equivalente a:
+
+```typescript
+contador = contador + 1;
+```
+
+---
+
+# 22. Operador de decremento `--`
+
+Remove `1` do valor.
+
+```typescript
+let contador = 10;
+
+contador--;
+```
+
+Resultado:
+
+```text
+9
+```
+
+É equivalente a:
+
+```typescript
+contador = contador - 1;
+```
+
+---
+
+# 23. Operadores bitwise
+
+O JavaScript/TypeScript também possui operadores para manipulação de bits.
+
+Os principais são:
+
+| Operador | Nome                             |              |
+| -------- | -------------------------------- | ------------ |
+| `&`      | AND bit a bit                    |              |
+| `        | `                                | OR bit a bit |
+| `^`      | XOR                              |              |
+| `~`      | NOT                              |              |
+| `<<`     | Deslocamento à esquerda          |              |
+| `>>`     | Deslocamento à direita           |              |
+| `>>>`    | Deslocamento à direita sem sinal |              |
+
+Exemplo:
+
+```typescript
+const resultado = 5 & 1;
+
+console.log(resultado);
+```
+
+Esses operadores são mais comuns em situações específicas, como:
+
+* programação de baixo nível;
+* manipulação de bits;
+* máscaras de bits;
+* otimizações específicas;
+* protocolos e dados binários.
+
+Para quem está começando com TypeScript, não são prioridade.
+
+---
+
+# 24. Operadores mais importantes para você aprender primeiro
+
+Não precisa decorar todos de uma vez.
+
+Comece por estes:
+
+```text
+=
++
+-
+*
+/
+%
+===
+!==
+>
+<
+>=
+<=
+&&
+||
+!
+?
+:
+??
+?.
+typeof
+as
+```
+
+Depois estude:
+
+```text
+instanceof
+in
+++
+--
+& 
+|
+^
+~
+<<
+>>
+>>>
+```
+
+---
+
+# 🎯 Exemplo juntando vários operadores
+
+Vamos criar uma pequena validação de paciente:
+
+```typescript
+interface Paciente {
+    nome: string;
+    idade: number;
+    ativo: boolean;
+}
+
+const paciente: Paciente = {
+    nome: "João",
+    idade: 25,
+    ativo: true
+};
+
+const podeAgendar =
+    paciente.idade >= 18 &&
+    paciente.ativo === true;
+
+const mensagem = podeAgendar
+    ? "Paciente pode realizar o agendamento"
+    : "Paciente não pode realizar o agendamento";
+
+console.log(mensagem);
+```
+
+## O que aconteceu?
+
+### `>=`
+
+```typescript
+paciente.idade >= 18
+```
+
+Verifica se o paciente tem 18 anos ou mais.
+
+---
+
+### `===`
+
+```typescript
+paciente.ativo === true
+```
+
+Verifica se `ativo` é exatamente `true`.
+
+---
+
+### `&&`
+
+```typescript
+paciente.idade >= 18 &&
+paciente.ativo === true
+```
+
+Exige que **as duas condições** sejam verdadeiras.
+
+---
+
+### `? :`
+
+```typescript
+const mensagem = podeAgendar
+    ? "Paciente pode realizar o agendamento"
+    : "Paciente não pode realizar o agendamento";
+```
+
+Escolhe uma mensagem dependendo do resultado de `podeAgendar`.
+
+---
+
+# 🧠 Resumo
+
+Os operadores podem ser agrupados assim:
+
+```text
+OPERADORES DO TYPESCRIPT
+│
+├── Aritméticos
+│   ├── +
+│   ├── -
+│   ├── *
+│   ├── /
+│   ├── %
+│   └── **
+│
+├── Atribuição
+│   ├── =
+│   ├── +=
+│   ├── -=
+│   ├── *=
+│   ├── /=
+│   └── %=
+│
+├── Comparação
+│   ├── ===
+│   ├── !==
+│   ├── >
+│   ├── <
+│   ├── >=
+│   └── <=
+│
+├── Lógicos
+│   ├── &&
+│   ├── ||
+│   └── !
+│
+├── Condicional
+│   └── ?:
+│
+├── Tipagem
+│   ├── typeof
+│   ├── instanceof
+│   ├── in
+│   └── as
+│
+├── Segurança
+│   ├── ?.
+│   ├── ??
+│   └── !
+│
+└── Bitwise
+    ├── &
+    ├── |
+    ├── ^
+    ├── ~
+    ├── <<
+    ├── >>
+    └── >>>
+```
+
+## ⭐ Os 10 que eu priorizaria
+
+Se você está começando TypeScript, memorize primeiro:
+
+1. `=` → atribuição
+2. `+` → soma
+3. `===` → comparação estrita
+4. `!==` → diferente estrito
+5. `>` / `<` → maior / menor
+6. `&&` → E
+7. `||` → OU
+8. `!` → negação
+9. `?.` → acesso seguro
+10. `??` → valor padrão para `null`/`undefined`
+
+Depois avance para `typeof`, `as`, `in`, `instanceof` e os operadores bitwise.
 
 
 
