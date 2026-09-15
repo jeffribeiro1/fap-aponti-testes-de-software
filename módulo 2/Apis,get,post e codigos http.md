@@ -686,3 +686,567 @@ Para QA, conhecer APIs é importante porque permite testar o sistema **além da 
                      +
                    JSON
 ```
+
+---
+
+# Boas Práticas em Testes de API
+
+As boas práticas ajudam a tornar os testes de API mais organizados, confiáveis, fáceis de manter e de entender.
+
+---
+
+## 1. Validar o Status Code
+
+Não verificar apenas se a requisição foi executada. É importante validar se o **status HTTP retornado é o esperado**.
+
+Exemplo:
+
+```text
+GET /pacientes
+```
+
+Esperado:
+
+```text
+200 OK
+```
+
+Para um cadastro:
+
+```text
+POST /pacientes
+```
+
+Esperado:
+
+```text
+201 Created
+```
+
+---
+
+## 2. Testar cenários positivos e negativos
+
+Não devemos testar apenas o caminho de sucesso.
+
+### Cenário positivo
+
+Enviar dados válidos:
+
+```json
+{
+  "nome": "João Silva",
+  "email": "joao@email.com"
+}
+```
+
+Esperado:
+
+```text
+201 Created
+```
+
+### Cenário negativo
+
+Enviar e-mail inválido:
+
+```json
+{
+  "nome": "João Silva",
+  "email": "email-invalido"
+}
+```
+
+Esperado:
+
+```text
+400 Bad Request
+```
+
+---
+
+## 3. Validar o corpo da resposta
+
+Além do status code, verificar se os dados retornados estão corretos.
+
+Exemplo:
+
+```json
+{
+  "id": 10,
+  "nome": "João Silva",
+  "email": "joao@email.com"
+}
+```
+
+Validar:
+
+```text
+✓ ID foi gerado
+✓ Nome está correto
+✓ E-mail está correto
+✓ Campos esperados existem
+✓ Tipos dos dados estão corretos
+```
+
+---
+
+## 4. Validar os Headers
+
+Os headers também fazem parte da resposta da API.
+
+Por exemplo:
+
+```text
+Content-Type: application/json
+```
+
+O QA pode verificar se o servidor está retornando o tipo de conteúdo esperado.
+
+Também podem ser validados headers relacionados a:
+
+* Autenticação.
+* Cache.
+* Segurança.
+* CORS.
+* Content-Type.
+
+---
+
+## 5. Testar campos obrigatórios
+
+Verificar o comportamento da API quando um campo obrigatório não é enviado.
+
+Exemplo:
+
+```json
+{
+  "email": "joao@email.com"
+}
+```
+
+Se `nome` for obrigatório, a API deve rejeitar a requisição.
+
+Esperado:
+
+```text
+400 Bad Request
+```
+
+---
+
+## 6. Testar campos vazios e nulos
+
+É importante diferenciar situações como:
+
+```json
+{
+  "nome": ""
+}
+```
+
+e:
+
+```json
+{
+  "nome": null
+}
+```
+
+A API deve tratar esses valores de acordo com as regras definidas para o campo.
+
+---
+
+## 7. Testar limites dos campos
+
+Testar os limites definidos pela aplicação.
+
+Por exemplo, se o campo aceita no máximo 100 caracteres:
+
+```text
+99 caracteres  → válido
+100 caracteres → válido
+101 caracteres → inválido
+```
+
+Esse tipo de teste ajuda a encontrar problemas de **boundary value**.
+
+---
+
+## 8. Testar tipos de dados
+
+Verificar se a API rejeita tipos incorretos.
+
+Esperado:
+
+```json
+{
+  "idade": 25
+}
+```
+
+Teste inválido:
+
+```json
+{
+  "idade": "vinte e cinco"
+}
+```
+
+O comportamento esperado deve estar de acordo com o contrato da API.
+
+---
+
+## 9. Testar dados duplicados
+
+Verificar o comportamento quando um recurso que deveria ser único é cadastrado novamente.
+
+Exemplo:
+
+```text
+POST /pacientes
+```
+
+Com um CPF já cadastrado.
+
+A API deve impedir o cadastro duplicado e retornar o status definido pelo sistema, por exemplo:
+
+```text
+409 Conflict
+```
+
+---
+
+## 10. Testar autenticação
+
+Verificar o comportamento da API sem autenticação.
+
+Exemplo:
+
+```text
+GET /pacientes
+```
+
+Sem token.
+
+Esperado:
+
+```text
+401 Unauthorized
+```
+
+Também é importante testar:
+
+```text
+✓ Token válido
+✓ Token inválido
+✓ Token expirado
+✓ Token ausente
+```
+
+---
+
+## 11. Testar autorização
+
+Autenticação e autorização são conceitos diferentes.
+
+**Autenticação:**
+
+> Quem é o usuário?
+
+**Autorização:**
+
+> O usuário possui permissão para executar essa ação?
+
+Exemplo:
+
+```text
+Usuário autenticado
+        ↓
+Sem permissão para excluir
+        ↓
+403 Forbidden
+```
+
+---
+
+## 12. Testar recursos inexistentes
+
+Enviar uma requisição para um recurso que não existe.
+
+Exemplo:
+
+```text
+GET /pacientes/999999
+```
+
+Se o paciente não existir:
+
+```text
+404 Not Found
+```
+
+---
+
+## 13. Validar mensagens de erro
+
+Não basta retornar um `400`, `401` ou `404`.
+
+Também é importante verificar se a mensagem retornada é clara e adequada.
+
+Exemplo:
+
+```json
+{
+  "erro": "CPF inválido"
+}
+```
+
+Evitar mensagens genéricas que não ajudam na identificação do problema.
+
+---
+
+## 14. Não utilizar dados reais
+
+Durante os testes, utilizar **dados fictícios ou dados especificamente preparados para teste**.
+
+Evitar utilizar:
+
+* CPF real.
+* Dados bancários reais.
+* Senhas reais.
+* Tokens reais.
+* Informações pessoais de clientes.
+
+Exemplo:
+
+```json
+{
+  "nome": "Usuário Teste",
+  "email": "teste@example.com"
+}
+```
+
+---
+
+## 15. Não expor informações sensíveis
+
+Tokens, senhas, chaves de API e outras credenciais não devem ser colocados diretamente no código ou publicados no GitHub.
+
+Evitar:
+
+```typescript
+const senha = "MinhaSenha123";
+const token = "token-secreto";
+```
+
+Preferir variáveis de ambiente:
+
+```text
+API_URL
+TOKEN
+USERNAME
+PASSWORD
+```
+
+---
+
+## 16. Utilizar ambientes separados
+
+Sempre que possível, separar os ambientes:
+
+```text
+Desenvolvimento
+       ↓
+Homologação
+       ↓
+Produção
+```
+
+Os testes de QA devem ser executados preferencialmente em ambientes destinados a testes, evitando alterações acidentais em produção.
+
+---
+
+## 17. Utilizar variáveis de ambiente
+
+Em ferramentas como Postman, é possível utilizar variáveis:
+
+```text
+{{baseUrl}}
+{{token}}
+{{userId}}
+```
+
+Exemplo:
+
+```text
+GET {{baseUrl}}/pacientes/{{userId}}
+```
+
+Isso facilita a execução dos mesmos testes em diferentes ambientes.
+
+---
+
+## 18. Organizar as coleções de testes
+
+Manter os testes organizados por funcionalidade.
+
+Exemplo:
+
+```text
+API Clínica Psi
+│
+├── Autenticação
+│   ├── Login válido
+│   ├── Login inválido
+│   └── Token expirado
+│
+├── Pacientes
+│   ├── GET - Listar pacientes
+│   ├── GET - Buscar paciente
+│   ├── POST - Criar paciente
+│   └── POST - Dados inválidos
+│
+└── Psicólogos
+    ├── GET - Listar psicólogos
+    ├── POST - Criar psicólogo
+    └── DELETE - Excluir psicólogo
+```
+
+---
+
+## 19. Validar o tempo de resposta
+
+Uma API pode retornar `200 OK` e ainda apresentar um problema de performance.
+
+Exemplo:
+
+```text
+Status: 200 OK
+Tempo: 8 segundos
+```
+
+Dependendo do requisito, esse resultado pode ser considerado inadequado.
+
+O QA deve verificar se o tempo de resposta está dentro do limite estabelecido.
+
+---
+
+## 20. Testar repetibilidade
+
+Um bom teste deve ser **reproduzível**.
+
+Deve ser possível executar o mesmo cenário novamente e obter um resultado consistente, considerando que o estado dos dados seja controlado.
+
+Documentar:
+
+```text
+Endpoint
+Método
+Headers
+Body
+Dados utilizados
+Resultado esperado
+Resultado obtido
+Status Code
+Evidências
+```
+
+---
+
+## 21. Utilizar dados de teste controlados
+
+Criar dados específicos para cada cenário.
+
+Exemplo:
+
+```text
+Paciente válido
+Paciente com CPF inválido
+Paciente com e-mail inválido
+Paciente duplicado
+Paciente sem nome
+Paciente com telefone inválido
+```
+
+Isso facilita a identificação dos defeitos.
+
+---
+
+## 22. Validar o contrato da API
+
+Quando existe uma documentação utilizando **Swagger/OpenAPI**, o QA pode comparar o comportamento real da API com o contrato definido.
+
+Verificar:
+
+```text
+✓ Endpoint
+✓ Método HTTP
+✓ Parâmetros
+✓ Campos obrigatórios
+✓ Tipos dos campos
+✓ Status Codes
+✓ Estrutura da resposta
+```
+
+---
+
+# Checklist de boas práticas
+
+```text
+[ ] Validar Status Code
+[ ] Validar Response Body
+[ ] Validar Headers
+[ ] Testar cenários positivos
+[ ] Testar cenários negativos
+[ ] Testar campos obrigatórios
+[ ] Testar campos vazios
+[ ] Testar valores nulos
+[ ] Testar limites
+[ ] Testar tipos de dados
+[ ] Testar dados duplicados
+[ ] Testar autenticação
+[ ] Testar autorização
+[ ] Testar recursos inexistentes
+[ ] Validar mensagens de erro
+[ ] Utilizar dados fictícios
+[ ] Não expor credenciais
+[ ] Utilizar variáveis de ambiente
+[ ] Separar ambientes
+[ ] Validar tempo de resposta
+[ ] Validar contrato da API
+[ ] Manter os testes organizados
+[ ] Documentar evidências
+```
+
+---
+
+# Mentalidade do QA ao testar APIs
+
+Ao testar uma API, não devemos pensar apenas:
+
+> "A requisição funcionou?"
+
+Devemos pensar:
+
+> **"A API está se comportando corretamente em diferentes situações?"**
+
+Por isso, devemos testar:
+
+```text
+             API
+              │
+     ┌────────┼────────┐
+     ↓        ↓        ↓
+  Válido   Inválido  Limites
+     │        │        │
+     ↓        ↓        ↓
+  Sucesso    Erro    Validação
+     │        │        │
+     └────────┼────────┘
+              ↓
+        Resultado esperado
+```
+
+O objetivo do QA é verificar se a API atende aos **requisitos funcionais, regras de negócio, segurança, confiabilidade e desempenho** esperados.
+
